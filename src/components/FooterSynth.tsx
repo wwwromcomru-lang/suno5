@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 
 const SYNTH_TYPES = [
   { label: "Piano", type: "sine" as OscillatorType, attack: 0.01, decay: 0.3, sustain: 0.4, release: 0.8 },
