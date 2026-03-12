@@ -134,6 +134,26 @@ const FooterSynth = () => {
     [synth, getCtx]
   );
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.repeat) return;
+      const note = KEY_MAP[e.key.toLowerCase()];
+      if (!note) return;
+      const freq = NOTE_FREQ_MAP.get(note);
+      if (freq) playNote(note, freq);
+    };
+    const handleKeyUp = (e: KeyboardEvent) => {
+      const note = KEY_MAP[e.key.toLowerCase()];
+      if (note) stopNote(note);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("keyup", handleKeyUp);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("keyup", handleKeyUp);
+    };
+  }, [playNote, stopNote]);
+
   const whiteKeyWidth = 100 / whiteNotes.length;
 
   return (
