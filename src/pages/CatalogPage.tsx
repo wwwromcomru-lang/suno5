@@ -36,7 +36,7 @@ const CatalogPage = () => {
             Все книги доступны по подписке с ежемесячными обновлениями.
           </p>
 
-          <div className="mt-14 flex flex-col gap-5">
+          <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 gap-5">
             {books.map((book, i) => (
               <div
                 key={i}
@@ -64,13 +64,21 @@ const CatalogPage = () => {
             ))}
 
             {/* Coming soon */}
-            <div className="flex items-center gap-5 bg-card/50 rounded-2xl border border-dashed border-border p-4">
+            <div className="flex items-center gap-5 bg-card/50 rounded-2xl border border-dashed border-border p-4 sm:col-span-2">
               <div className="w-20 h-28 sm:w-24 sm:h-32 rounded-lg bg-muted flex items-center justify-center flex-shrink-0">
                 <span className="text-3xl">📖</span>
               </div>
               <div>
                 <h3 className="font-bold text-base sm:text-lg text-muted-foreground">Скоро новая книга</h3>
                 <p className="mt-1 text-sm text-muted-foreground">Следите за обновлениями — новая книга каждый месяц!</p>
+                <a
+                  href="https://t.me/master_suno"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
+                >
+                  📢 МАСТЕР SUNO в Telegram →
+                </a>
               </div>
             </div>
           </div>
