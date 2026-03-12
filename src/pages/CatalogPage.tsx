@@ -38,11 +38,8 @@ const CatalogPage = () => {
 
           <div className="mt-14 flex flex-col gap-5">
             {books.map((book, i) => (
-              <a
+              <div
                 key={i}
-                href={book.link}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="group flex items-center gap-5 bg-card rounded-2xl overflow-hidden border border-border hover:shadow-lg transition-shadow duration-300 p-4"
               >
                 <img
@@ -51,11 +48,19 @@ const CatalogPage = () => {
                   className="w-20 h-28 sm:w-24 sm:h-32 object-cover rounded-lg flex-shrink-0 group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
-                <div className="min-w-0">
+                <div className="min-w-0 flex-1">
                   <h3 className="font-bold text-base sm:text-lg text-foreground">{book.title}</h3>
                   <p className="mt-1 text-sm text-muted-foreground line-clamp-2">{book.desc}</p>
+                  <a
+                    href={book.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-block bg-secondary text-secondary-foreground px-4 py-1.5 rounded-lg text-sm font-semibold hover:opacity-80 transition-opacity"
+                  >
+                    Купить отдельно →
+                  </a>
                 </div>
-              </a>
+              </div>
             ))}
 
             {/* Coming soon */}
