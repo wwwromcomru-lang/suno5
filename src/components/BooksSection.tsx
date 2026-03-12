@@ -13,9 +13,9 @@ const books = [
 
 const BooksSection = () => {
   return (
-    <section id="books" className="py-20 md:py-28 bg-card">
+    <section id="books" className="py-20 md:py-28 bg-card" aria-labelledby="books-heading">
       <div className="container">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-center text-foreground">
+        <h2 id="books-heading" className="text-3xl md:text-4xl font-extrabold text-center text-foreground">
           Твои книги в подписке
         </h2>
         <p className="mt-3 text-center text-muted-foreground text-lg">
@@ -23,16 +23,18 @@ const BooksSection = () => {
         </p>
         <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {books.map((book, i) => (
-            <div
+            <article
               key={i}
               className="animate-in-view group bg-background rounded-2xl overflow-hidden shadow-sm border border-border hover:shadow-xl transition-shadow duration-300 flex flex-col"
             >
               <div className="aspect-[3/4] overflow-hidden">
                 <img
                   src={book.img}
-                  alt={book.title}
+                  alt={`Обложка книги «${book.title}» — промпты для Suno AI`}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
+                  width="300"
+                  height="400"
                 />
               </div>
               <div className="p-5 flex flex-col flex-1">
@@ -47,7 +49,7 @@ const BooksSection = () => {
                   Купить отдельно →
                 </a>
               </div>
-            </div>
+            </article>
           ))}
         </div>
         <div className="mt-10 text-center">

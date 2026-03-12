@@ -11,15 +11,16 @@ const Header = () => {
 
   return (
     <header
+      role="banner"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled ? "bg-card/95 backdrop-blur-md shadow-md" : "bg-transparent"}`
       }>
       
       <div className="container flex items-center justify-between py-4">
-        <a href="#" className="text-2xl font-extrabold brand-gradient-text">
+        <a href="/" className="text-2xl font-extrabold brand-gradient-text" aria-label="Suno5.ru — Главная">
           SUNO5.RU
         </a>
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-muted-foreground">
+        <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-muted-foreground" aria-label="Основная навигация">
           <a href="#books" className="hover:text-foreground transition-colors">Книги</a>
           <a href="#tariffs" className="hover:text-foreground transition-colors">Тарифы</a>
           <a href="#reviews" className="hover:text-foreground transition-colors">Отзывы</a>
