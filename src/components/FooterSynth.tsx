@@ -197,6 +197,11 @@ const FooterSynth = () => {
               width: `${whiteKeyWidth}%`,
             }}
           >
+            {NOTE_TO_KEY[n.note] && (
+              <span className="absolute top-2 left-1/2 -translate-x-1/2 text-[10px] text-foreground/20 font-bold">
+                {NOTE_TO_KEY[n.note]}
+              </span>
+            )}
             <span className="absolute bottom-2 left-1/2 -translate-x-1/2 text-[10px] text-foreground/30 font-medium">
               {n.note.replace(/\d/, "")}
             </span>
