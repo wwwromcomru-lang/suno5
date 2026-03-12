@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
-import book1 from "@/assets/book1.jpg";
-import book2 from "@/assets/book2.jpg";
-import book3 from "@/assets/book3.jpg";
+import book1 from "@/assets/book1.png";
+import book2 from "@/assets/book2.png";
+import book3 from "@/assets/book3.png";
+import book4 from "@/assets/book4.png";
 
 const books = [
-  { img: book1, title: "1000+ Промптов Suno AI", desc: "Готовые промпты для любого жанра и настроения" },
-  { img: book2, title: "Секреты русского хита", desc: "Формулы хитов на русском языке для Suno" },
-  { img: book3, title: "Эпический Sound Design", desc: "Промпты для кинематографического звучания" },
+  { img: book1, title: "1000+ Промптов для Suno AI", desc: "Ультимативный справочник для создания хитов за 1 минуту. Перестаньте гадать — начните управлять звуком." },
+  { img: book2, title: "Секреты русского хита", desc: "Хватит гадать. Начни управлять. Уникальная технология создания промптов в SUNO AI." },
+  { img: book3, title: "Эпический Sound Design", desc: "Как создавать промпты в SUNO AI для эпического и игрового саунд-дизайна." },
+  { img: book4, title: "Jingle Master", desc: "ИИ‑промпты для джинглов и аудиобрендинга. Создавайте фирменный звук бренда в Suno AI за минуты, а не недели." },
 ];
 
 const BooksSection = () => {
