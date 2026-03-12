@@ -41,6 +41,7 @@ const KEY_MAP: Record<string, string> = {
 };
 
 const NOTE_FREQ_MAP = new Map(NOTES.map((n) => [n.note, n.freq]));
+const NOTE_TO_KEY = Object.fromEntries(Object.entries(KEY_MAP).map(([k, v]) => [v, k.toUpperCase()]));
 
 const whiteNotes = NOTES.filter((n) => !n.black);
 const blackNotes = NOTES.filter((n) => n.black);
