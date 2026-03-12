@@ -42,7 +42,7 @@ const BooksSection = () => {
                   href={book.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-3 inline-block text-center bg-secondary text-secondary-foreground px-4 py-2 rounded-lg text-sm font-semibold hover:opacity-80 transition-opacity"
+                  className="mt-3 inline-block text-center bg-accent text-accent-foreground px-4 py-2 rounded-lg text-sm font-bold hover:brightness-110 transition-all shadow-sm hover:shadow-md"
                 >
                   Купить отдельно →
                 </a>
