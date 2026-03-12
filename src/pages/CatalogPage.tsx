@@ -5,11 +5,11 @@ import book3 from "@/assets/book3.png";
 import book4 from "@/assets/book4.png";
 
 const books = [
-  { img: book1, title: "1000+ Промптов для Suno AI", desc: "Ультимативный справочник для создания хитов за 1 минуту. Перестаньте гадать — начните управлять звуком.", link: "https://sunoprompt.ru/" },
-  { img: book2, title: "Секреты русского хита", desc: "Хватит гадать. Начни управлять. Уникальная технология создания промптов в SUNO AI.", link: "https://sunoprompt.ru/books/2/" },
-  { img: book3, title: "Эпический Sound Design", desc: "Как создавать промпты в SUNO AI для эпического и игрового саунд-дизайна.", link: "https://suno5.ru/books/3/" },
-  { img: book4, title: "Jingle Master", desc: "ИИ‑промпты для джинглов и аудиобрендинга. Создавайте фирменный звук бренда в Suno AI за минуты, а не недели.", link: "https://suno5.ru/books/4/" },
-];
+{ img: book1, title: "1000+ Промптов для Suno AI", desc: "Ультимативный справочник для создания хитов за 1 минуту. Перестаньте гадать — начните управлять звуком.", link: "https://sunoprompt.ru/" },
+{ img: book2, title: "Секреты русского хита", desc: "Хватит гадать. Начни управлять. Уникальная технология создания промптов в SUNO AI.", link: "https://sunoprompt.ru/books/2/" },
+{ img: book3, title: "Эпический Sound Design", desc: "Как создавать промпты в SUNO AI для эпического и игрового саунд-дизайна.", link: "https://suno5.ru/books/3/" },
+{ img: book4, title: "Jingle Master", desc: "ИИ‑промпты для джинглов и аудиобрендинга. Создавайте фирменный звук бренда в Suno AI за минуты, а не недели.", link: "https://suno5.ru/books/4/" }];
+
 
 const CatalogPage = () => {
   return (
@@ -17,7 +17,7 @@ const CatalogPage = () => {
       <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container flex items-center justify-between h-16">
           <Link to="/" className="text-xl font-extrabold brand-gradient-text">
-            MASTERSUNO.RU
+            SUNO5.RU
           </Link>
           <Link
             to="/#tariffs"
@@ -37,31 +37,31 @@ const CatalogPage = () => {
           </p>
 
           <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {books.map((book, i) => (
-              <div
-                key={i}
-                className="group flex items-center gap-5 bg-card rounded-2xl overflow-hidden border border-border hover:shadow-lg transition-shadow duration-300 p-4"
-              >
+            {books.map((book, i) =>
+            <div
+              key={i}
+              className="group flex items-center gap-5 bg-card rounded-2xl overflow-hidden border border-border hover:shadow-lg transition-shadow duration-300 p-4">
+              
                 <img
-                  src={book.img}
-                  alt={book.title}
-                  className="w-20 h-28 sm:w-24 sm:h-32 object-cover rounded-lg flex-shrink-0 group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                />
+                src={book.img}
+                alt={book.title}
+                className="w-20 h-28 sm:w-24 sm:h-32 object-cover rounded-lg flex-shrink-0 group-hover:scale-105 transition-transform duration-500"
+                loading="lazy" />
+              
                 <div className="min-w-0 flex-1">
                   <h3 className="font-bold text-base sm:text-lg text-foreground">{book.title}</h3>
                   <p className="mt-1 text-sm text-muted-foreground line-clamp-2">{book.desc}</p>
                   <a
-                    href={book.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-2 inline-block bg-accent text-accent-foreground px-4 py-1.5 rounded-lg text-sm font-bold hover:brightness-110 transition-all shadow-sm hover:shadow-md"
-                  >
+                  href={book.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 inline-block bg-accent text-accent-foreground px-4 py-1.5 rounded-lg text-sm font-bold hover:brightness-110 transition-all shadow-sm hover:shadow-md">
+                  
                     Купить отдельно →
                   </a>
                 </div>
               </div>
-            ))}
+            )}
 
             {/* Coming soon */}
             <div className="flex items-center gap-5 bg-card/50 rounded-2xl border border-dashed border-border p-4 sm:col-span-2">
@@ -75,8 +75,8 @@ const CatalogPage = () => {
                   href="https://t.me/master_suno"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
-                >
+                  className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline">
+                  
                   📢 МАСТЕР SUNO в Telegram →
                 </a>
               </div>
