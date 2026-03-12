@@ -34,6 +34,14 @@ const NOTES = [
   { note: "B5", freq: 987.77, black: false },
 ];
 
+const KEY_MAP: Record<string, string> = {
+  a: "C4", w: "C#4", s: "D4", e: "D#4", d: "E4", f: "F4", t: "F#4",
+  g: "G4", y: "G#4", h: "A4", u: "A#4", j: "B4",
+  k: "C5", o: "C#5", l: "D5", p: "D#5", ";": "E5",
+};
+
+const NOTE_FREQ_MAP = new Map(NOTES.map((n) => [n.note, n.freq]));
+
 const whiteNotes = NOTES.filter((n) => !n.black);
 const blackNotes = NOTES.filter((n) => n.black);
 
