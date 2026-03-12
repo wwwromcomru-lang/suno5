@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 
 const SYNTH_TYPES = [
   { label: "Piano", type: "sine" as OscillatorType, attack: 0.01, decay: 0.3, sustain: 0.4, release: 0.8 },
@@ -33,6 +33,14 @@ const NOTES = [
   { note: "A#5", freq: 932.33, black: true },
   { note: "B5", freq: 987.77, black: false },
 ];
+
+const KEY_MAP: Record<string, string> = {
+  a: "C4", w: "C#4", s: "D4", e: "D#4", d: "E4", f: "F4", t: "F#4",
+  g: "G4", y: "G#4", h: "A4", u: "A#4", j: "B4",
+  k: "C5", o: "C#5", l: "D5", p: "D#5", ";": "E5",
+};
+
+const NOTE_FREQ_MAP = new Map(NOTES.map((n) => [n.note, n.freq]));
 
 const whiteNotes = NOTES.filter((n) => !n.black);
 const blackNotes = NOTES.filter((n) => n.black);
@@ -125,6 +133,26 @@ const FooterSynth = () => {
     },
     [synth, getCtx]
   );
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.repeat) return;
+      const note = KEY_MAP[e.key.toLowerCase()];
+      if (!note) return;
+      const freq = NOTE_FREQ_MAP.get(note);
+      if (freq) playNote(note, freq);
+    };
+    const handleKeyUp = (e: KeyboardEvent) => {
+      const note = KEY_MAP[e.key.toLowerCase()];
+      if (note) stopNote(note);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("keyup", handleKeyUp);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("keyup", handleKeyUp);
+    };
+  }, [playNote, stopNote]);
 
   const whiteKeyWidth = 100 / whiteNotes.length;
 
