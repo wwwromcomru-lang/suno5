@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import book1 from "@/assets/book1.png";
 import book2 from "@/assets/book2.png";
@@ -12,10 +13,16 @@ const books = [
 
 
 const CatalogPage = () => {
+  useEffect(() => {
+    document.title = "Каталог книг промптов Suno AI — Suno5.ru";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Полный каталог книг промптов для Suno AI. 4 книги, 5000+ промптов — стили мировых звёзд, саунд-дизайн, джинглы и русский хит.");
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-        <div className="container flex items-center justify-between h-16">
+        <nav className="container flex items-center justify-between h-16" aria-label="Навигация каталога">
           <Link to="/" className="text-xl font-extrabold brand-gradient-text">
             SUNO5.RU
           </Link>
@@ -24,7 +31,7 @@ const CatalogPage = () => {
             className="bg-accent text-accent-foreground px-5 py-2 rounded-xl font-bold text-sm hover:opacity-90 transition-opacity">
             Подписаться 
           </Link>
-        </div>
+        </nav>
       </header>
 
       <main className="py-16 md:py-24">
@@ -38,18 +45,20 @@ const CatalogPage = () => {
 
           <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 gap-5">
             {books.map((book, i) =>
-            <div
+            <article
               key={i}
               className="group flex items-center gap-5 bg-card rounded-2xl overflow-hidden border border-border hover:shadow-lg transition-shadow duration-300 p-4">
               
                 <img
                 src={book.img}
-                alt={book.title}
+                alt={`Обложка книги «${book.title}» — промпты для Suno AI`}
                 className="w-20 h-28 sm:w-24 sm:h-32 object-cover rounded-lg flex-shrink-0 group-hover:scale-105 transition-transform duration-500"
-                loading="lazy" />
+                loading="lazy"
+                width="96"
+                height="128" />
               
                 <div className="min-w-0 flex-1">
-                  <h3 className="font-bold text-base sm:text-lg text-foreground">{book.title}</h3>
+                  <h2 className="font-bold text-base sm:text-lg text-foreground">{book.title}</h2>
                   <p className="mt-1 text-sm text-muted-foreground line-clamp-2">{book.desc}</p>
                   <a
                   href={book.link}
@@ -60,16 +69,16 @@ const CatalogPage = () => {
                     Купить отдельно →
                   </a>
                 </div>
-              </div>
+              </article>
             )}
 
             {/* Coming soon */}
             <div className="flex items-center gap-5 bg-card/50 rounded-2xl border border-dashed border-border p-4 sm:col-span-2">
               <div className="w-20 h-28 sm:w-24 sm:h-32 rounded-lg bg-muted flex items-center justify-center flex-shrink-0">
-                <span className="text-3xl">📖</span>
+                <span className="text-3xl" role="img" aria-label="Книга">📖</span>
               </div>
               <div>
-                <h3 className="font-bold text-base sm:text-lg text-muted-foreground">Скоро новая книга</h3>
+                <h2 className="font-bold text-base sm:text-lg text-muted-foreground">Скоро новая книга</h2>
                 <p className="mt-1 text-sm text-muted-foreground">Следите за обновлениями — новая книга каждый месяц!</p>
                 <a
                   href="https://t.me/master_suno"

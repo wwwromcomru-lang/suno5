@@ -2,10 +2,10 @@ import CountdownTimer from "./CountdownTimer";
 
 const HeroSection = () => {
   return (
-    <section className="hero-bg pt-32 pb-20 md:pt-40 md:pb-28">
+    <section className="hero-bg pt-32 pb-20 md:pt-40 md:pb-28" aria-labelledby="hero-heading">
       <div className="container text-center">
         <CountdownTimer />
-        <h1 className="mt-8 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-foreground">
+        <h1 id="hero-heading" className="mt-8 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-foreground">
           Библиотека промптов
           <br />
           <span className="brand-gradient-text">от MASTERSUNO.RU</span>

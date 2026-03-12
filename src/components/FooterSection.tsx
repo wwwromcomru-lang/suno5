@@ -2,18 +2,18 @@ import FooterSynth from "./FooterSynth";
 
 const FooterSection = () => {
   return (
-    <footer className="bg-foreground pt-10 pb-6">
+    <footer className="bg-foreground pt-10 pb-6" role="contentinfo">
       <div className="container">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-background/70">© 2026 MASTERSUNO.RU — Все права защищены</p>
-          <div className="flex gap-6 text-sm">
+          <nav className="flex gap-6 text-sm" aria-label="Юридическая информация">
             <a href="#" className="text-background/70 hover:text-background/90 transition-colors">
               Политика конфиденциальности
             </a>
             <a href="#" className="text-background/70 hover:text-background/90 transition-colors">
               Оферта
             </a>
-          </div>
+          </nav>
         </div>
         <div className="mt-8 text-center">
           <a
