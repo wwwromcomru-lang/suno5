@@ -22,7 +22,7 @@ const CatalogPage = () => {
           <Link
             to="/#tariffs"
             className="bg-accent text-accent-foreground px-5 py-2 rounded-xl font-bold text-sm hover:opacity-90 transition-opacity">
-            Подписаться 1990₽
+            Подписаться 
           </Link>
         </div>
       </header>
