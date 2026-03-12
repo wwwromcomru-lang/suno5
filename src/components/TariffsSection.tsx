@@ -1,4 +1,4 @@
-const LAVA_LINK = "https://lava.top/твоя-ссылка";
+const LAVA_LINK = "https://app.lava.top/posts/a683bc4b-d25b-4ec6-a14a-ab80c5a4ffb9";
 
 const TariffsSection = () => {
   return (
