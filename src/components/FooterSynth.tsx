@@ -228,8 +228,13 @@ const FooterSynth = () => {
                 left: `${(pos + 0.65) * whiteKeyWidth}%`,
                 width: `${whiteKeyWidth * 0.65}%`,
               }}
-            />
-          );
+            >
+              {NOTE_TO_KEY[n.note] && (
+                <span className="absolute bottom-1.5 left-1/2 -translate-x-1/2 text-[9px] text-background/40 font-bold">
+                  {NOTE_TO_KEY[n.note]}
+                </span>
+              )}
+            </div>
         })}
       </div>
     </div>
