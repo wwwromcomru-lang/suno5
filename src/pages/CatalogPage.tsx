@@ -96,7 +96,7 @@ const CatalogPage = () => {
 
       <footer className="bg-foreground py-8">
         <div className="container text-center">
-          <p className="text-sm text-background/70">© 2026 MASTERSUNO.RU — Все права защищены</p>
+          <p className="text-sm text-background/70">© 2026 SUNO5.RU — Все права защищены</p>
         </div>
       </footer>
     </div>);
