@@ -5,10 +5,10 @@ import book3 from "@/assets/book3.png";
 import book4 from "@/assets/book4.png";
 
 const books = [
-  { img: book1, title: "1000+ Промптов для Suno AI", desc: "Ультимативный справочник для создания хитов за 1 минуту. Перестаньте гадать — начните управлять звуком." },
-  { img: book2, title: "Секреты русского хита", desc: "Хватит гадать. Начни управлять. Уникальная технология создания промптов в SUNO AI." },
-  { img: book3, title: "Эпический Sound Design", desc: "Как создавать промпты в SUNO AI для эпического и игрового саунд-дизайна." },
-  { img: book4, title: "Jingle Master", desc: "ИИ‑промпты для джинглов и аудиобрендинга. Создавайте фирменный звук бренда в Suno AI за минуты, а не недели." },
+  { img: book1, title: "1000+ Промптов для Suno AI", desc: "Ультимативный справочник для создания хитов за 1 минуту. Перестаньте гадать — начните управлять звуком.", link: "https://sunoprompt.ru/" },
+  { img: book2, title: "Секреты русского хита", desc: "Хватит гадать. Начни управлять. Уникальная технология создания промптов в SUNO AI.", link: "https://sunoprompt.ru/books/2/" },
+  { img: book3, title: "Эпический Sound Design", desc: "Как создавать промпты в SUNO AI для эпического и игрового саунд-дизайна.", link: "https://suno5.ru/books/3/" },
+  { img: book4, title: "Jingle Master", desc: "ИИ‑промпты для джинглов и аудиобрендинга. Создавайте фирменный звук бренда в Suno AI за минуты, а не недели.", link: "https://suno5.ru/books/4/" },
 ];
 
 const BooksSection = () => {
@@ -25,7 +25,7 @@ const BooksSection = () => {
           {books.map((book, i) => (
             <div
               key={i}
-              className="animate-in-view group bg-background rounded-2xl overflow-hidden shadow-sm border border-border hover:shadow-xl transition-shadow duration-300"
+              className="animate-in-view group bg-background rounded-2xl overflow-hidden shadow-sm border border-border hover:shadow-xl transition-shadow duration-300 flex flex-col"
             >
               <div className="aspect-[3/4] overflow-hidden">
                 <img
@@ -35,9 +35,17 @@ const BooksSection = () => {
                   loading="lazy"
                 />
               </div>
-              <div className="p-5">
+              <div className="p-5 flex flex-col flex-1">
                 <h3 className="font-bold text-lg text-foreground">{book.title}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{book.desc}</p>
+                <p className="mt-1 text-sm text-muted-foreground flex-1">{book.desc}</p>
+                <a
+                  href={book.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-block text-center bg-secondary text-secondary-foreground px-4 py-2 rounded-lg text-sm font-semibold hover:opacity-80 transition-opacity"
+                >
+                  Купить отдельно →
+                </a>
               </div>
             </div>
           ))}
