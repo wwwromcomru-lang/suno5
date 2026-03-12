@@ -5,6 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: '/suno5/',  // ← ТВОЁ ИМЯ РЕПО!
   server: {
     host: "::",
     port: 8080,
