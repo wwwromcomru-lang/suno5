@@ -41,6 +41,7 @@ const KEY_MAP: Record<string, string> = {
 };
 
 const NOTE_FREQ_MAP = new Map(NOTES.map((n) => [n.note, n.freq]));
+const NOTE_TO_KEY = Object.fromEntries(Object.entries(KEY_MAP).map(([k, v]) => [v, k.toUpperCase()]));
 
 const whiteNotes = NOTES.filter((n) => !n.black);
 const blackNotes = NOTES.filter((n) => n.black);
@@ -196,6 +197,11 @@ const FooterSynth = () => {
               width: `${whiteKeyWidth}%`,
             }}
           >
+            {NOTE_TO_KEY[n.note] && (
+              <span className="absolute top-2 left-1/2 -translate-x-1/2 text-[10px] text-foreground/20 font-bold">
+                {NOTE_TO_KEY[n.note]}
+              </span>
+            )}
             <span className="absolute bottom-2 left-1/2 -translate-x-1/2 text-[10px] text-foreground/30 font-medium">
               {n.note.replace(/\d/, "")}
             </span>
@@ -222,9 +228,16 @@ const FooterSynth = () => {
                 left: `${(pos + 0.65) * whiteKeyWidth}%`,
                 width: `${whiteKeyWidth * 0.65}%`,
               }}
-            />
+            >
+              {NOTE_TO_KEY[n.note] && (
+                <span className="absolute bottom-1.5 left-1/2 -translate-x-1/2 text-[9px] text-background/40 font-bold">
+                  {NOTE_TO_KEY[n.note]}
+                </span>
+              )}
+            </div>
           );
         })}
+
       </div>
     </div>
   );
