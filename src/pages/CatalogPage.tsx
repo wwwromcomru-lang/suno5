@@ -88,7 +88,7 @@ const CatalogPage = () => {
               to="/#tariffs"
               className="bg-accent text-accent-foreground px-8 py-3.5 rounded-xl font-bold hover:opacity-90 transition-opacity inline-block">
               
-              Получить доступ за 1 990 ₽/мес
+              Получить доступ      
             </Link>
           </div>
         </div>
