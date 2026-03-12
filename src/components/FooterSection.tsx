@@ -18,9 +18,9 @@ const FooterSection = () => {
         <div className="mt-8 text-center">
           <a
             href="#tariffs"
-            className="bg-accent text-accent-foreground px-8 py-3.5 rounded-xl font-bold hover:opacity-90 transition-opacity inline-block"
-          >
-            Начать подписку за 1990 ₽/мес
+            className="bg-accent text-accent-foreground px-8 py-3.5 rounded-xl font-bold hover:opacity-90 transition-opacity inline-block">
+            
+            ​Скачать все книги промптов      
           </a>
         </div>
       </div>
@@ -32,8 +32,8 @@ const FooterSection = () => {
         </p>
         <FooterSynth />
       </div>
-    </footer>
-  );
+    </footer>);
+
 };
 
 export default FooterSection;
