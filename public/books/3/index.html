@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ЭПИЧЕСКИЙ SOUND DESIGN:CINEMATIC & GAMES</title>
+<style>
+/* ---------------- CSS для защиты ---------------- */
+body {
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+    -moz-user-select: none; 
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* ---------------- CSS для Fullscreen/Clipped iFrame ---------------- */
+#fullscreen-container {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden; 
+}
+
+#clipped-iframe {
+    height: calc(100vh + 20px); 
+    width: 100vw;
+    margin-bottom: -20px; 
+    border: none;
+    display: block;
+}
+</style>
+
+
+
+</head>
+<body oncontextmenu="return false;">
+
+   
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js', 'ym');
+
+    ym(102059421, 'init', {clickmap:true, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/102059421" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+
+
+
+<div id="fullscreen-container">
+  <iframe 
+    src="https://epicsounddesign.lovable.app/" 
+    id="clipped-iframe" 
+    title="Сайт" 
+    frameborder="0">
+  </iframe>
+</div>
+
+<script>
+    // Блокировка горячих клавиш (F12, Ctrl+U, Ctrl+Shift+I/J)
+    document.onkeydown = function(e) {
+        if(e.keyCode == 123) return false; // F12
+        
+        // Ctrl+Shift+I, Ctrl+Shift+J
+        if(e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) return false; 
+        
+        if(e.ctrlKey && e.keyCode == 85) return false; // Ctrl+U
+    };
+    
+    // Блокируем контекстное меню через JS (для надежности)
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+</script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/699637753a5ba51c3b88ffdf/1jhpch99b';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+
+</body>
+</html>
