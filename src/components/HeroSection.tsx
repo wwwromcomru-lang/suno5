@@ -10,9 +10,9 @@ const HeroSection = () => {
           <br />
           <span className="brand-gradient-text text-2xl">от MASTERSUNO.RU</span>
         </h1>
-        <p className="mt-5 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-          5 000+ готовых промптов для Suno AI — копируйте и генерируйте хиты за 1 минуту.
-          Ежемесячные дропы: 500 свежих промптов + бонусы.
+        <p className="mt-5 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">5 000+ готовых промптов для Suno AI — копируйте и генерируйте хиты за 1 минуту.
+
+
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
