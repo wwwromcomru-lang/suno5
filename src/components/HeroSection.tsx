@@ -8,7 +8,7 @@ const HeroSection = () => {
         <h1 id="hero-heading" className="mt-8 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-foreground">
           Библиотека промптов
           <br />
-          <span className="brand-gradient-text">от MASTERSUNO.RU</span>
+          <span className="brand-gradient-text text-2xl">от MASTERSUNO.RU</span>
         </h1>
         <p className="mt-5 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
           5 000+ готовых промптов для Suno AI — копируйте и генерируйте хиты за 1 минуту.
