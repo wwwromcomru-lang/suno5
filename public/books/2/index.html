@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Роман Синицын: Секреты Русского Хита | Руководство по Suno AI</title>
+<meta name="description" content="Уникальная технология создания промптов в Suno AI от Романа Синицына. Узнайте секреты создания русских хитов и профессионального звучания нейросети.">
+<meta name="keywords" content="Роман Синицын, Suno AI, промпты для Suno, нейросети музыка, создание хитов, обучение Suno AI, как делать музыку в нейросети">
+<meta name="author" content="Роман Синицын">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sunoprompt.ru/books/2">
+<meta property="og:title" content="Роман Синицын: Секреты Русского Хита">
+<meta property="og:description" content="Взломай алгоритмы Suno AI. Профессиональное руководство по созданию музыки от эксперта.">
+<meta property="og:image" content="https://sunoprompt.ru/books/2/1roman_ru_sunoprompt_ru_russionhitbook01022026.png">
+
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://sunoprompt.ru/secretrussionhitbook.html">
+<meta property="twitter:title" content="Роман Синицын: Секреты Русского Хита">
+<meta property="twitter:description" content="Уникальная технология создания промптов в Suno AI. Начни делать музыку профессионально.">
+<meta property="twitter:image" content="https://sunoprompt.ru/books/2/1roman_ru_sunoprompt_ru_russionhitbook01022026.png">
+
+<link rel="icon" href="https://sunoprompt.ru/favicon.ico" type="image/x-icon">
+
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Raleway:wght@400;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #FFD700;
+            --bright-red: #FF2200;
+            --neon-blue: #00F2FF;
+            --bg: #050208;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Raleway', sans-serif;
+            background-color: var(--bg);
+            color: #fff;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Анимированный фон */
+        .stage-lights {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: 
+                radial-gradient(circle at 15% 15%, rgba(255, 34, 0, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(138, 43, 226, 0.15) 0%, transparent 40%);
+            z-index: -1;
+        }
+
+        header {
+            padding: 25px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: sticky; top: 0; z-index: 1000;
+        }
+
+        .logo { font-family: 'Oswald', sans-serif; font-size: 1.6rem; color: var(--gold); letter-spacing: 2px; text-decoration: none; }
+
+        /* БЕГУЩАЯ СТРОКА */
+        .ticker-wrap {
+            width: 100%; overflow: hidden; background: #fff; padding: 5px 0;
+            transform: rotate(-1.5deg) scale(1.05); margin: 20px 0 60px;
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+        }
+        .ticker { display: flex; white-space: nowrap; animation: ticker 25s linear infinite; }
+        .ticker span {
+            font-family: 'Oswald', sans-serif; font-size: 1.5rem; font-weight: 900;
+            text-transform: uppercase; padding: 0 30px; color: #000; display: flex; align-items: center;
+        }
+        .badge { background: var(--bright-red); color: #fff; padding: 2px 10px; margin: 0 15px; border-radius: 4px; font-size: 1rem; animation: blink 0.8s step-end infinite; }
+        @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        /* HERO SECTION */
+        .hero { display: flex; align-items: center; justify-content: space-around; padding: 40px 8% 80px; min-height: 70vh; gap: 50px; }
+        .hero-text { flex: 1.2; }
+
+        h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(3rem, 10vw, 6.5rem);
+            line-height: 0.9;
+            margin: 0;
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: -2px;
+            font-style: italic;
+        }
+        .text-top { color: var(--gold); text-shadow: 4px 4px 0px rgba(0,0,0,1); }
+        .text-bottom { color: #fff; display: block; text-shadow: 5px 5px 15px rgba(255, 34, 0, 0.6); transform: skew(-5deg); }
+
+        /* ОПИСАНИЕ НАД КНОПКОЙ */
+        .tagline {
+            font-size: 1.4rem;
+            margin: 35px 0;
+            color: #ccc;
+            border-left: 4px solid var(--bright-red);
+            padding-left: 20px;
+            max-width: 600px;
+        }
+
+        /* КНОПКА ИЗ ТВОЕГО КОДА */
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #FFD700, #FFA500);
+            color: #000;
+            padding: 25px 60px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-radius: 0 20px 0 20px;
+            box-shadow: 10px 10px 0px var(--bright-red);
+            transition: 0.3s;
+        }
+        .cta-btn:hover {
+            transform: translate(-5px, -5px);
+            box-shadow: 15px 15px 0px #fff;
+        }
+
+        /* КНИГА */
+        .hero-image { flex: 1; text-align: center; position: relative; }
+        .hero-image img {
+            max-width: 500px; width: 100%; filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.3));
+            animation: float 4s ease-in-out infinite;
+        }
+        @keyframes float { 0%, 100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-15px) rotate(1deg); } }
+
+        /* ДОПОЛНИТЕЛЬНЫЕ БЛОКИ */
+        section.content { padding: 100px 10%; border-top: 1px solid rgba(255,255,255,0.05); }
+        h2 { font-family: 'Oswald', sans-serif; font-size: 3.5rem; text-transform: uppercase; color: var(--gold); text-align: center; margin-bottom: 60px; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: rgba(255,255,255,0.03); padding: 40px; border-top: 2px solid var(--gold); }
+        .card h3 { font-family: 'Oswald', sans-serif; color: var(--gold); font-size: 1.8rem; margin-top: 0; }
+
+        .faq { max-width: 800px; margin: 0 auto; }
+        details { background: rgba(255,255,255,0.02); padding: 20px; margin-bottom: 10px; border-radius: 5px; cursor: pointer; }
+        summary { font-family: 'Oswald', sans-serif; font-size: 1.3rem; text-transform: uppercase; }
+
+        footer { text-align: center; padding: 60px; background: #000; border-top: 2px solid var(--bright-red); }
+
+        @media (max-width: 900px) {
+            .hero { flex-direction: column; text-align: center; }
+            h1 { font-size: 3.5rem; }
+            .tagline { border-left: none; padding-left: 0; }
+        }
+    
+
+
+
+/* Стили мобильного меню */
+.menu-btn {
+    display: none; /* По умолчанию скрыто на десктопе */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 30px;
+    z-index: 2000;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bar {
+    width: 100%;
+    height: 4px;
+    background-color: var(--gold);
+    transition: 0.4s;
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Скрыто за экраном */
+    width: 100%;
+    height: 100vh;
+    background: rgba(5, 2, 8, 0.95);
+    backdrop-filter: blur(20px);
+    z-index: 1500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.mobile-nav.active {
+    right: 0;
+}
+
+.nav-link {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+    margin: 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Анимация гамбургера в крестик */
+.menu-btn.open .bar:nth-child(1) { transform: rotate(-45deg) translate(-9px, 9px); }
+.menu-btn.open .bar:nth-child(2) { opacity: 0; }
+.menu-btn.open .bar:nth-child(3) { transform: rotate(45deg) translate(-9px, -9px); }
+
+/* Адаптивность: показываем кнопку только на мобильных */
+@media (max-width: 900px) {
+    .menu-btn { display: flex; }
+    header div:last-child { display: none; } /* Прячем имя автора в хедере на мобилках, чтобы не мешало кнопке */
+}
+
+
+
+
+
+
+</style>
+</head>
+<body>
+
+
+
+
+
+<div class="menu-btn" id="menuBtn">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+</div>
+
+<nav class="mobile-nav" id="mobileNav">
+    <a href="#" class="nav-link">Главная</a>
+    <a href="#benefits" class="nav-link">Преимущества</a>
+    <a href="#inside" class="nav-link">Что внутри</a>
+    <a href="#author" class="nav-link">Об авторе</a>
+    <a href="#buy" class="nav-link" style="color: var(--gold);">Купить со скидкой</a>
+</nav>
+
+
+
+
+
+<div class="stage-lights"></div>
+
+<header>
+    <a href="#" class="logo">SUNOPROMPT.RU</a>
+    <div style="font-weight: 900; letter-spacing: 1px;">РОМАН СИНИЦЫН</div>
+</header>
+
+<div class="ticker-wrap">
+    <div class="ticker">
+        <span><div class="badge">NEW</div> СЕКРЕТЫ РУССКОГО ХИТА</span>
+        <span><div class="badge">TOP</div> ТЕХНОЛОГИЯ 2026</span>
+        <span><div class="badge">NEW</div> SUNO AI PROMPTING</span>
+        <span><div class="badge">TOP</div> ВЗЛОМ АЛГОРИТМОВ</span>
+        <span><div class="badge">NEW</div> СЕКРЕТЫ РУССКОГО ХИТА</span>
+        <span><div class="badge">TOP</div> ТЕХНОЛОГИЯ 2026</span>
+    </div>
+</div>
+
+<section class="hero">
+    <div class="hero-text">
+        <h1>
+            <span class="text-top">СЕКРЕТЫ</span>
+            <span class="text-bottom">РУССКОГО ХИТА</span>
+        </h1>
+        <p class="tagline">Хватит гадать. Начни управлять. <br>Уникальная технология создания промптов в <b>SUNO AI</b> для тех, кто делает музыку профессионально.</p>
+        <a href="#buy" class="cta-btn">ЗАБРАТЬ РУКОВОДСТВО</a>
+    </div>
+    <div class="hero-image">
+        <img src="https://sunoprompt.ru/books/2/1roman_ru_sunoprompt_ru_russionhitbook01022026.png
+
+
+" alt="Book">
+    </div>
+</section>
+
+<section    id="benefits" class="content">
+    <h2>Почему это работает?</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>БАЗА ЗНАНИЙ</h3>
+            <p>Никакой воды. Только конкретные теги и структуры, которые понимает нейросеть в 2026 году.</p>
+        </div>
+        <div class="card">
+            <h3>CHART READY</h3>
+            <p>Твои треки будут звучать так, будто над ними работал профессиональный звукорежиссер.</p>
+        </div>
+        <div class="card">
+            <h3>NO LIMITS</h3>
+            <p>Любые жанры: от поп-музыки до сложной электроники и аутентичного русского рока.</p>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="inside"   class="content" style="background: linear-gradient(180deg, var(--bg) 0%, rgba(255, 34, 0, 0.05) 50%, var(--bg) 100%);">
+    <h2>Внутри книги: Технологии 2026</h2>
+    
+    <div class="grid">
+        <div class="card" style="border-top-color: var(--neon-blue); position: relative; overflow: hidden; display: flex; flex-direction: column;">
+            <div style="position: absolute; top: -20px; right: -20px; font-size: 5rem; opacity: 0.05; font-weight: 900; z-index: 0;">VOICE</div>
+            
+            <img src="https:///sunoprompt.ru/books/2/mapvocal_mini.jpg" alt="Карта эмоций" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 20px; border: 1px solid rgba(0, 242, 255, 0.3); box-shadow: 0 5px 15px rgba(0, 242, 255, 0.1);">
+            
+            <h3 style="position: relative; z-index: 1;">КАРТА ВОКАЛЬНЫХ ЭМОЦИЙ</h3>
+            <p style="position: relative; z-index: 1;">Уникальная таблица промптов для управления голосом. От «шепота с надрывом» до «стадионного драйва».</p>
+            
+            <div style="margin-top: auto; display: flex; gap: 10px; position: relative; z-index: 1;">
+                <span style="font-size: 0.7rem; padding: 4px 8px; border: 1px solid var(--neon-blue); color: var(--neon-blue); border-radius: 4px;">Suno v5 Ready</span>
+                <span style="font-size: 0.7rem; padding: 4px 8px; border: 1px solid var(--neon-blue); color: var(--neon-blue); border-radius: 4px;">120+ Тегов</span>
+            </div>
+        </div>
+
+        <div class="card" style="border-top-color: #FF00FF; position: relative; overflow: hidden; display: flex; flex-direction: column;">
+            <div style="position: absolute; top: -20px; right: -20px; font-size: 5rem; opacity: 0.05; font-weight: 900; z-index: 0;">EQ</div>
+            
+            <img src="https://sunoprompt.ru/books/2/ecvalaizer_mini.jpg" alt="Эквалайзер эмоций" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 20px; border: 1px solid rgba(255, 0, 255, 0.3); box-shadow: 0 5px 15px rgba(255, 0, 255, 0.1);">
+            
+            <h3 style="position: relative; z-index: 1;">ЭКВАЛАЙЗЕР ЭМОЦИЙ</h3>
+            <p style="position: relative; z-index: 1;">Метод тонкой настройки настроения трека. Как сбалансировать меланхолию и энергию в одном промпте.</p>
+            
+            <div style="margin-top: auto; height: 30px; display: flex; align-items: flex-end; gap: 3px; position: relative; z-index: 1;">
+                <div style="flex:1; background: #FF00FF; height: 40%; animation: eq 1s infinite alternate;"></div>
+                <div style="flex:1; background: #FF00FF; height: 80%; animation: eq 1.2s infinite alternate;"></div>
+                <div style="flex:1; background: #FF00FF; height: 60%; animation: eq 0.8s infinite alternate;"></div>
+                <div style="flex:1; background: #FF00FF; height: 30%; animation: eq 0.9s infinite alternate;"></div>
+            </div>
+        </div>
+
+        <div class="card" style="border-top-color: var(--gold); position: relative; overflow: hidden; display: flex; flex-direction: column;">
+            <div style="position: absolute; top: -20px; right: -20px; font-size: 5rem; opacity: 0.05; font-weight: 900; z-index: 0;">HIT</div>
+            
+            <img src="https://sunoprompt.ru/books/2/hitanatomy_mini.jpg" alt="Анатомия хита" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 20px; border: 1px solid rgba(255, 215, 0, 0.3); box-shadow: 0 5px 15px rgba(255, 215, 0, 0.1);">
+            
+            <h3 style="position: relative; z-index: 1;">АНАТОМИЯ ХИТА</h3>
+            <p style="position: relative; z-index: 1;">Разбор структуры виральных треков. Где должен быть хук и как прописать идеальный переход.</p>
+            
+            <ul style="margin: 15px 0 0 0; padding: 0; list-style: none; font-size: 0.85rem; color: #aaa; position: relative; z-index: 1;">
+                <li>— Тайминг хуков</li>
+                <li>— Магия структуры v4</li>
+            </ul>
+        </div>
+    </div>
+
+
+<style>
+    @keyframes eq {
+        from { height: 20%; }
+        to { height: 100%; }
+    }
+</style>
+
+
+<section id="author" class="content" style="background: rgba(255, 215, 0, 0.02);">
+    <div style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap; justify-content: center;">
+        <div style="flex: 1; min-width: 300px; max-width: 400px; position: relative;">
+            <div style="position: absolute; top: 10px; left: 10px; right: -10px; bottom: -10px; border: 2px solid var(--gold); z-index: 0;"></div>
+            <img src="https://sunoprompt.ru/books/2/romansinicyn.ru_logo.jpg" alt="Роман Синицын" style="width: 100%; position: relative; z-index: 1; filter: grayscale(1) contrast(1.2);">
+        </div>
+        <div style="flex: 1.5; min-width: 300px; text-align: left;">
+            <h2 style="text-align: left; margin-bottom: 20px;">КТО ТВОЙ ПРОВОДНИК?</h2>
+            <h3 style="font-family: 'Oswald', sans-serif; font-size: 2.5rem; color: var(--gold); margin: 0;">РОМАН СИНИЦЫН</h3>
+            <p style="font-size: 1.1rem; line-height: 1.6; color: #ccc; margin-top: 20px;">
+                Основатель проекта <b>SUNOPROMPT.RU</b> и эксперт в области AI-технологий. Провел сотни часов, препарируя алгоритмы Suno AI v3.5, v4 и v5 чтобы найти те самые комбинации тегов, которые превращают цифровой шум в коммерческий звук.
+            </p>
+            <p style="font-style: italic; border-left: 2px solid var(--gold); padding-left: 20px; color: #eee;">
+                "Моя цель — дать вам инструменты, чтобы ваша музыка звучала в чартах, а не оставалась в папке 'черновики'."
+            </p>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="content" style="background: rgba(0,0,0,0.3);">
+    <h2>Вопросы и ответы</h2>
+    <div class="faq">
+        <details>
+            <summary>Это сложно освоить?</summary>
+            <p style="padding-top:10px; opacity:0.7;">Нет, книга написана доступным языком. Вы начнете получать результаты уже через 15 минут чтения.</p>
+        </details>
+        <details>
+            <summary>Книга обновляется?</summary>
+            <p style="padding-top:10px; opacity:0.7;">Да, все владельцы получают доступ к актуальным наработкам под новые версии Suno AI.</p>
+        </details>
+        <details>
+            <summary>В каком виде я получу товар?</summary>
+            <p style="padding-top:10px; opacity:0.7;">Сразу после оплаты вы получите ссылку на скачивание PDF-книги.</p>
+        </details>
+    </div>
+</section>
+
+
+
+
+
+
+
+<section class="content" style="text-align: center; background: var(--bright-red); color: #fff; padding: 60px 10%;">
+    <h2 id="red-block-title" style="color: #fff; font-size: 2.5rem; margin-bottom: 10px; font-family: 'Oswald', sans-serif;">ВНИМАНИЕ: ПРЕДЛОЖЕНИЕ ОГРАНИЧЕНО</h2>
+    <p id="red-block-text" style="font-size: 1.2rem; font-weight: bold;">
+        Цена 590₽ действует только до конца таймера. <br>
+        После этого стоимость вернется к <span style="text-decoration: line-through; opacity: 0.7;">990₽</span>.
+    </p>
+    
+    <div style="display: flex; justify-content: center; gap: 20px; margin-top: 30px; font-family: 'Oswald', sans-serif;">
+        <div style="background: #000; padding: 15px; border-radius: 5px; min-width: 80px;">
+            <div id="red-timer-min" style="font-size: 2rem;">15</div>
+            <div style="font-size: 0.7rem; opacity: 0.6;">МИНУТ</div>
+        </div>
+        <div style="background: #000; padding: 15px; border-radius: 5px; min-width: 80px;">
+            <div id="red-timer-sec" style="font-size: 2rem;">00</div>
+            <div style="font-size: 0.7rem; opacity: 0.6;">СЕКУНД</div>
+        </div>
+    </div>
+
+    <a href="#buy" id="red-block-btn" style="display: inline-block; margin-top: 30px; background: #fff; color: var(--bright-red); padding: 15px 40px; text-decoration: none; font-family: 'Oswald', sans-serif; font-weight: 900; font-size: 1.2rem; text-transform: uppercase; border-radius: 5px; transition: 0.3s;">
+        УСПЕТЬ ЗАБРАТЬ СО СКИДКОЙ
+    </a>
+</section>
+
+
+
+<section class="content" style="background: rgba(255, 34, 0, 0.03); border-top: 1px dashed rgba(255, 255, 255, 0.1); border-bottom: 1px dashed rgba(255, 255, 255, 0.1);">
+    <h2 style="color: #fff;">СТОП! ЭТО НЕ ДЛЯ ВСЕХ</h2>
+    <p style="text-align: center; opacity: 0.6; margin-top: -30px; margin-bottom: 50px;">Прочитай это перед тем, как нажать на кнопку покупки</p>
+    
+    <div class="grid" style="max-width: 900px; margin: 0 auto;">
+        <div style="padding: 30px; border: 1px solid rgba(255, 34, 0, 0.3); background: rgba(0,0,0,0.4);">
+            <h3 style="font-family: 'Oswald', sans-serif; color: var(--bright-red); margin-top: 0;">ВАМ НЕ НУЖНА ЭТА КНИГА, ЕСЛИ:</h3>
+            <ul style="list-style: none; padding: 0; color: #aaa; line-height: 1.8;">
+                <li>❌ Вы ищете кнопку «Сделать шедевр» за 1 клик.</li>
+                <li>❌ Вы не готовы потратить 15 минут на изучение логики промптов.</li>
+                <li>❌ Вас устраивает стандартный «пластиковый» звук нейросетей.</li>
+                <li>❌ Вы считаете, что ИИ никогда не заменит «душу» (и не хотите использовать его как инструмент).</li>
+            </ul>
+        </div>
+
+        <div style="padding: 30px; border: 1px solid var(--gold); background: rgba(255, 215, 0, 0.05);">
+            <h3 style="font-family: 'Oswald', sans-serif; color: var(--gold); margin-top: 0;">ЭТО СОЗДАНО ДЛЯ ВАС, ЕСЛИ:</h3>
+            <ul style="list-style: none; padding: 0; color: #eee; line-height: 1.8;">
+                <li>✅ Вы хотите, чтобы Suno выдавала звук релизного качества.</li>
+                <li>✅ Вам нужны конкретные формулы, а не случайный результат.</li>
+                <li>✅ Вы планируете монетизировать свои нейро-треки.</li>
+                <li>✅ Вы хотите быть на шаг впереди 99% пользователей Suno.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="buy" style="padding: 100px 5%; text-align: center; background: radial-gradient(circle, rgba(255,34,0,0.1) 0%, transparent 70%);">
+    <div style="max-width: 800px; margin: 0 auto; border: 4px solid var(--gold); padding: 60px 20px; position: relative;">
+        <div id="offer-status" style="position: absolute; top: -30px; left: 50%; transform: translateX(-50%); background: var(--gold); color: #000; padding: 10px 30px; font-family: 'Oswald', sans-serif; font-weight: 900; font-size: 1.5rem; text-transform: uppercase; white-space: nowrap;">
+            ПРЕДЛОЖЕНИЕ ИСТЕКАЕТ
+        </div>
+
+        <h2 id="main-title" style="font-size: 3rem; margin-bottom: 20px;">ЗАБРАТЬ «СЕКРЕТЫ РУССКОГО ХИТА»</h2>
+        
+        <div style="display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; font-family: 'Oswald', sans-serif;">
+            <div style="background: #111; padding: 10px; border-radius: 5px; min-width: 70px;">
+                <div id="timer-min" style="font-size: 2.5rem; color: var(--gold);">15</div>
+                <div style="font-size: 0.7rem; opacity: 0.5;">МИНУТ</div>
+            </div>
+            <div style="font-size: 2.5rem; color: var(--gold); align-self: center;">:</div>
+            <div style="background: #111; padding: 10px; border-radius: 5px; min-width: 70px;">
+                <div id="timer-sec" style="font-size: 2.5rem; color: var(--gold);">00</div>
+                <div style="font-size: 0.7rem; opacity: 0.5;">СЕКУНД</div>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 40px;">
+            <span id="old-price" style="font-size: 2rem; text-decoration: line-through; opacity: 0.4; margin-right: 20px;">990₽</span>
+            <span id="current-price" style="font-size: 5rem; font-family: 'Oswald', sans-serif; color: var(--gold); text-shadow: 0 0 20px rgba(255,215,0,0.4);">590₽</span>
+        </div>
+
+        <a id="cta-link" href="https://app.lava.top/products/c331a365-2a9d-4c4b-952e-9ab3d41afd02/61bc8707-5dc6-4e12-a2e6-0b6e5fe49ab5?currency=RUB" class="cta-btn" style="padding: 30px 80px; font-size: 2rem;" target="_blank">ЗАБРАТЬ РУКОВОДСТВО СЕЙЧАС</a>
+        
+        <p id="stock-info" style="margin-top: 30px; font-size: 1.1rem; color: var(--bright-red); font-weight: bold;">
+            ⚠️ ОСТАЛОСЬ 7 КОПИЙ ПО ЭТОЙ ЦЕНЕ
+        </p>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+    <div class="logo">SUNOPROMPT.RU</div>
+    <p style="opacity: 0.5; margin-top: 20px;">© 2026 1ROMAN.RU | Авторский проект Романа Синицына</p>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    const duration = 15 * 60; 
+    const storageKey = 'suno_timer_end';
+    const newPrice = "990₽";
+    const newLink = "https://app.lava.top/products/cb408f7d-a8b1-4e49-88c2-957ba089eadc/6d22ebf7-7eb5-4613-b242-60cf22aad69d?currency=RUB"; 
+
+    function startTimer() {
+        let deadline = localStorage.getItem(storageKey);
+
+        if (!deadline) {
+            deadline = Math.floor(Date.now() / 1000) + duration;
+            localStorage.setItem(storageKey, deadline);
+        }
+
+        const timerInterval = setInterval(() => {
+            const now = Math.floor(Date.now() / 1000);
+            const remaining = deadline - now;
+
+            if (remaining <= 0) {
+                clearInterval(timerInterval);
+                activateFullPrice();
+            } else {
+                const minutes = Math.floor(remaining / 60);
+                const seconds = remaining % 60;
+                const minStr = minutes.toString().padStart(2, '0');
+                const secStr = seconds.toString().padStart(2, '0');
+
+                // Обновляем основной таймер
+                document.getElementById('timer-min').innerText = minStr;
+                document.getElementById('timer-sec').innerText = secStr;
+                
+                // Обновляем красный таймер
+                document.getElementById('red-timer-min').innerText = minStr;
+                document.getElementById('red-timer-sec').innerText = secStr;
+            }
+        }, 1000);
+    }
+
+    function activateFullPrice() {
+        // 1. Обновляем нижний блок (оффер)
+        document.getElementById('timer-min').innerText = "00";
+        document.getElementById('timer-sec').innerText = "00";
+        document.getElementById('current-price').innerText = newPrice;
+        document.getElementById('old-price').style.display = "none";
+        document.getElementById('cta-link').href = newLink;
+        document.getElementById('cta-link').innerText = "КУПИТЬ ЗА ПОЛНУЮ СТОИМОСТЬ";
+        document.getElementById('offer-status').innerText = "АКЦИЯ ЗАВЕРШЕНА";
+        document.getElementById('offer-status').style.background = "#555";
+        document.getElementById('stock-info').innerText = "Срок действия акции истек.";
+
+        // 2. Обновляем красный блок
+        document.getElementById('red-timer-min').innerText = "00";
+        document.getElementById('red-timer-sec').innerText = "00";
+        document.getElementById('red-block-title').innerText = "АКЦИЯ ЗАКОНЧИЛАСЬ";
+        document.getElementById('red-block-text').innerHTML = "Стоимость книги вернулась к стандартной цене — 990₽";
+        document.getElementById('red-block-btn').innerText = "ПЕРЕЙТИ К ОПЛАТЕ";
+        document.getElementById('red-block-btn').style.background = "rgba(255,255,255,0.2)";
+        document.getElementById('red-block-btn').style.color = "#fff";
+    }
+
+    window.onload = startTimer;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const navLinks = document.querySelectorAll('.nav-link');
+
+// Открыть/закрыть меню
+menuBtn.addEventListener('click', () => {
+    menuBtn.classList.toggle('open');
+    mobileNav.classList.toggle('active');
+    // Блокируем скролл при открытом меню
+    document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : 'auto';
+});
+
+// Закрывать меню при клике на любую ссылку
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        menuBtn.classList.remove('open');
+        mobileNav.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+});
+</script>
+</body>
+</html>
