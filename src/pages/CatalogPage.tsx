@@ -39,7 +39,7 @@ const CatalogPage = () => {
       </header>
 
       <main className="py-16 md:py-24">
-        <div className="container max-w-3xl">
+        <div className="container max-w-6xl">
           <h1 className="text-3xl md:text-5xl font-extrabold text-center text-foreground">
             Каталог книг промптов
           </h1>
