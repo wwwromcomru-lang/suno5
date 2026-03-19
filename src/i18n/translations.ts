@@ -104,6 +104,7 @@ export const translations = {
   "tariffs.subtitle": { ru: "Отменяй в любой момент", en: "Cancel anytime" },
   "tariffs.badge": { ru: "Полный доступ", en: "Full Access" },
   "tariffs.price": { ru: "₽/мес", en: "₽/mo" },
+  "tariffs.currencies": { ru: "Оплата также возможна в € и $", en: "Also payable in € and $" },
   "tariffs.cta": { ru: "Подписаться", en: "Subscribe" },
   "tariffs.f1": { ru: "5 000+ готовых промптов", en: "5,000+ ready-made prompts" },
   "tariffs.f2": { ru: "500 новых промптов каждый месяц", en: "500 new prompts every month" },

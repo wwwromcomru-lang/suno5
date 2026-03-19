@@ -28,6 +28,7 @@ const TariffsSection = () => {
               <span className="text-6xl font-extrabold text-foreground">1990</span>
               <span className="text-muted-foreground ml-1 text-lg">{t("tariffs.price")}</span>
             </div>
+            <p className="mt-2 text-sm text-muted-foreground">{t("tariffs.currencies")}</p>
             <ul className="mt-8 space-y-3 text-left inline-block">
               {features.map((f, j) => (
                 <li key={j} className="flex items-center gap-2 text-sm text-foreground">
