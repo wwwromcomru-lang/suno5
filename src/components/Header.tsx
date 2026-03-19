@@ -20,7 +20,7 @@ const Header = () => {
       }>
       
       <div className="container flex items-center justify-between py-4">
-        <a href={prefix + "/"} className="text-2xl font-extrabold brand-gradient-text" aria-label="Suno5.ru — Главная">
+        <a href="/" className="text-2xl font-extrabold brand-gradient-text" aria-label="Suno5.ru — Главная">
           SUNO5.RU
         </a>
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-muted-foreground" aria-label="Основная навигация">
