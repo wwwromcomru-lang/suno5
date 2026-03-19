@@ -6,6 +6,7 @@ import book3 from "@/assets/book3.png";
 import book4 from "@/assets/book4.png";
 import book5 from "@/assets/book5.png";
 import book6 from "@/assets/book6.png";
+import book7 from "@/assets/book7.png";
 
 const books = [
 { img: book1, title: "1000+ Промптов для Suno AI", desc: "Ультимативный справочник для создания хитов за 1 минуту. Перестаньте гадать — начните управлять звуком.", link: "https://sunoprompt.ru/" },
@@ -13,7 +14,8 @@ const books = [
 { img: book3, title: "Эпический Sound Design", desc: "Как создавать промпты в SUNO AI для эпического и игрового саунд-дизайна.", link: "https://suno5.ru/books/3/" },
 { img: book4, title: "Jingle Master", desc: "ИИ‑промпты для джинглов и аудиобрендинга. Создавайте фирменный звук бренда в Suno AI за минуты, а не недели.", link: "https://suno5.ru/books/4/" },
 { img: book5, title: "GYM & Workout Music", desc: "500+ готовых промптов для тренировочной музыки в Suno AI. От phonk для жима до EDM-бёрнеров для HIIT.", link: "https://www.suno5.ru/books/5" },
-{ img: book6, title: "ШАНСОН Е", desc: "150+ промптов по русскому, французскому и мировому шансону для Suno AI. Книга-пакет с 90-дневным планом.", link: "https://www.suno5.ru/books/6" }];
+{ img: book6, title: "ШАНСОН Е", desc: "150+ промптов по русскому, французскому и мировому шансону для Suno AI. Книга-пакет с 90-дневным планом.", link: "https://www.suno5.ru/books/6" },
+{ img: book7, title: "Ритм в Suno AI", desc: "Книга о ритме для новичков в музыке. Без теории — всё через понятные слова и готовые промпты.", link: "https://www.suno5.ru/books/7" }];
 
 
 const CatalogPage = () => {
