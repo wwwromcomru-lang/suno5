@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const CountdownTimer = () => {
+  const { t } = useLanguage();
   const [timeLeft, setTimeLeft] = useState(() => {
     const saved = localStorage.getItem("suno5_timer_end");
     if (saved) {
@@ -25,7 +27,7 @@ const CountdownTimer = () => {
 
   return (
     <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/30 rounded-xl px-5 py-2.5 text-accent font-bold">
-      <span className="text-sm">🔥 Скидка истекает через</span>
+      <span className="text-sm">{t("hero.discount")}</span>
       <div className="flex gap-1 font-mono text-lg">
         <span>{pad(hours)}</span>:<span>{pad(minutes)}</span>:<span>{pad(seconds)}</span>
       </div>
