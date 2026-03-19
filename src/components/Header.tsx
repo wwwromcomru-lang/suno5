@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
+import { useLanguage } from "@/i18n/LanguageContext";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
+  const { t, prefix } = useLanguage();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -17,23 +20,24 @@ const Header = () => {
       }>
       
       <div className="container flex items-center justify-between py-4">
-        <a href="/" className="text-2xl font-extrabold brand-gradient-text" aria-label="Suno5.ru — Главная">
+        <a href={prefix + "/"} className="text-2xl font-extrabold brand-gradient-text" aria-label="Suno5.ru — Главная">
           SUNO5.RU
         </a>
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-muted-foreground" aria-label="Основная навигация">
-          <a href="#books" className="hover:text-foreground transition-colors">Книги</a>
-          <a href="#tariffs" className="hover:text-foreground transition-colors">Тарифы</a>
-          <a href="#reviews" className="hover:text-foreground transition-colors">Отзывы</a>
+          <a href="#books" className="hover:text-foreground transition-colors">{t("nav.books")}</a>
+          <a href="#tariffs" className="hover:text-foreground transition-colors">{t("nav.tariffs")}</a>
+          <a href="#reviews" className="hover:text-foreground transition-colors">{t("nav.reviews")}</a>
         </nav>
-        <a
-          href="#tariffs"
-          className="bg-accent text-accent-foreground px-5 py-2.5 rounded-lg font-bold text-sm hover:opacity-90 transition-opacity">
-          
-          Подписаться
-        </a>
+        <div className="flex items-center gap-3">
+          <LanguageSwitcher />
+          <a
+            href="#tariffs"
+            className="bg-accent text-accent-foreground px-5 py-2.5 rounded-lg font-bold text-sm hover:opacity-90 transition-opacity">
+            {t("nav.subscribe")}
+          </a>
+        </div>
       </div>
     </header>);
-
 };
 
 export default Header;
