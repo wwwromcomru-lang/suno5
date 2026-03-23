@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Музыкальная динамика в Suno: книга о динамике - Автор Роман Синицын</title>
+<meta name="description" content="Музыкальная динамика в Suno: книга о динамике для новичков в музыке">
+<meta name="author" content="Роман Синицын" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@romansinicyn" />
+<meta name="twitter:image" content="https://i.ibb.co/YTWsLb73/2026-3-24-2-5-9.jpg">
+<meta property="og:title" content="Музыкальная динамика в Suno - Автор Роман Синицын">
+<meta name="twitter:title" content="Музыкальная динамика в Suno - Автор Роман Синицын">
+<meta property="og:description" content="Музыкальная динамика в Suno для новичков в музыке - Автор Роман Синицын">
+<meta name="twitter:description" content="Музыкальная динамика в Suno для новичков в музыке - Автор Роман Синицын">
+<style>
+/* ---------------- CSS для защиты ---------------- */
+body {
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+    -moz-user-select: none; 
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* ---------------- CSS для Fullscreen/Clipped iFrame ---------------- */
+#fullscreen-container {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden; 
+}
+
+#clipped-iframe {
+    height: calc(100vh + 20px); 
+    width: 100vw;
+    margin-bottom: -20px; 
+    border: none;
+    display: block;
+}
+</style>
+
+</head>
+<body oncontextmenu="return false;">
+
+<div id="fullscreen-container">
+  <iframe 
+    src="https://dynamic-tune-lab.lovable.app/" 
+    id="clipped-iframe" 
+    title="Сайт" 
+    frameborder="0">
+  </iframe>
+</div>
+
+<script>
+    // Блокировка горячих клавиш (F12, Ctrl+U, Ctrl+Shift+I/J)
+    document.onkeydown = function(e) {
+        if(e.keyCode == 123) return false; // F12
+        
+        // Ctrl+Shift+I, Ctrl+Shift+J
+        if(e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) return false; 
+        
+        if(e.ctrlKey && e.keyCode == 85) return false; // Ctrl+U
+    };
+    
+    // Блокируем контекстное меню через JS (для надежности)
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+</script>
+
+</body>
+</html>
