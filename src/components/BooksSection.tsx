@@ -7,6 +7,9 @@ import book3 from "@/assets/book3.png";
 import book4 from "@/assets/book4.png";
 import book5 from "@/assets/book5.png";
 import book6 from "@/assets/book6.png";
+import book6 from "@/assets/book7.png";
+import book6 from "@/assets/book8.png";
+import book6 from "@/assets/book9.png";
 
 const books: { img: string; titleKey: TranslationKey; descKey: TranslationKey; link: string }[] = [
   { img: book1, titleKey: "book1.title", descKey: "book1.desc", link: "https://sunoprompt.ru/" },
@@ -15,6 +18,9 @@ const books: { img: string; titleKey: TranslationKey; descKey: TranslationKey; l
   { img: book4, titleKey: "book4.title", descKey: "book4.desc", link: "https://suno5.ru/books/4/" },
   { img: book5, titleKey: "book5.title", descKey: "book5.desc", link: "https://www.suno5.ru/books/5" },
   { img: book6, titleKey: "book6.title", descKey: "book6.desc", link: "https://www.suno5.ru/books/6" },
+  { img: book6, titleKey: "book6.title", descKey: "book6.desc", link: "https://www.suno5.ru/books/7" },
+  { img: book6, titleKey: "book6.title", descKey: "book6.desc", link: "https://www.suno5.ru/books/8" },
+  { img: book6, titleKey: "book6.title", descKey: "book6.desc", link: "https://www.suno5.ru/books/9" },
 ];
 
 const BooksSection = () => {
