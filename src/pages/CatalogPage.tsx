@@ -21,8 +21,8 @@ const books: { img: string; titleKey: TranslationKey; descKey: TranslationKey; l
   { img: book5, titleKey: "book5.title", descKey: "book5.desc", link: "https://www.suno5.ru/books/5" },
   { img: book6, titleKey: "book6.title", descKey: "book6.desc", link: "https://www.suno5.ru/books/6" },
   { img: book7, titleKey: "book7.title", descKey: "book7.desc", link: "https://www.suno5.ru/books/7" },
-  { img: book8, titleKey: "book6.title", descKey: "book6.desc", link: "https://www.suno5.ru/books/8" },
-  { img: book9, titleKey: "book7.title", descKey: "book7.desc", link: "https://www.suno5.ru/books/9" },
+  { img: book8, titleKey: "book8.title", descKey: "book8.desc", link: "https://www.suno5.ru/books/8" },
+  { img: book9, titleKey: "book9.title", descKey: "book9.desc", link: "https://www.suno5.ru/books/9" },
   
 ];
 
