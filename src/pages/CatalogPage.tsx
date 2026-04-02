@@ -10,6 +10,8 @@ import book4 from "@/assets/book4.png";
 import book5 from "@/assets/book5.png";
 import book6 from "@/assets/book6.png";
 import book7 from "@/assets/book7.png";
+import book7 from "@/assets/book.png";
+import book7 from "@/assets/book9.png";
 
 const books: { img: string; titleKey: TranslationKey; descKey: TranslationKey; link: string }[] = [
   { img: book1, titleKey: "book1.title", descKey: "book1.desc", link: "https://sunoprompt.ru/" },
@@ -19,6 +21,9 @@ const books: { img: string; titleKey: TranslationKey; descKey: TranslationKey; l
   { img: book5, titleKey: "book5.title", descKey: "book5.desc", link: "https://www.suno5.ru/books/5" },
   { img: book6, titleKey: "book6.title", descKey: "book6.desc", link: "https://www.suno5.ru/books/6" },
   { img: book7, titleKey: "book7.title", descKey: "book7.desc", link: "https://www.suno5.ru/books/7" },
+  { img: book8, titleKey: "book6.title", descKey: "book6.desc", link: "https://www.suno5.ru/books/8" },
+  { img: book9, titleKey: "book7.title", descKey: "book7.desc", link: "https://www.suno5.ru/books/9" },
+  
 ];
 
 const CatalogPage = () => {
