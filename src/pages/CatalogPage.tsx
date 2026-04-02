@@ -10,8 +10,8 @@ import book4 from "@/assets/book4.png";
 import book5 from "@/assets/book5.png";
 import book6 from "@/assets/book6.png";
 import book7 from "@/assets/book7.png";
-import book7 from "@/assets/book.png";
-import book7 from "@/assets/book9.png";
+import book8 from "@/assets/book8.png";
+import book9 from "@/assets/book9.png";
 
 const books: { img: string; titleKey: TranslationKey; descKey: TranslationKey; link: string }[] = [
   { img: book1, titleKey: "book1.title", descKey: "book1.desc", link: "https://sunoprompt.ru/" },
