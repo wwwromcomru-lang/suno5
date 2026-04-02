@@ -98,6 +98,16 @@ export const translations = {
     ru: "Книга о ритме для новичков в музыке. Без теории — всё через понятные слова и готовые промпты.",
     en: "A book about rhythm for music beginners. No theory — everything through simple words and ready-made prompts.",
   },
+    "book8.title": { ru: "Динамика в Suno AI", en: "Dynamics in Suno AI" },
+  "book8.desc": {
+    ru: "Книга о динамике для новичков в музыке. Без теории — всё через понятные слова и готовые промпты.",
+    en: "A book about Dynamics for music beginners. No theory — everything through simple words and ready-made prompts.",
+  },
+      "book9.title": { ru: "Гармония в Suno AI", en: "Harmony in Suno AI" },
+  "book9.desc": {
+    ru: "Книга о гармонии для новичков в музыке. Без теории — всё через понятные слова и готовые промпты.",
+    en: "A book about Harmony for music beginners. No theory — everything through simple words and ready-made prompts.",
+  },
 
   // Tariffs
   "tariffs.title": { ru: "Одна подписка — все книги", en: "One Subscription — All Books" },
