@@ -10,30 +10,28 @@ import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
 
-const AppRoutes = () => (
-  <LanguageProvider>
-    <Routes>
-      <Route path="/" element={<Index />} />
-      <Route path="/catalog" element={<CatalogPage />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
-  </LanguageProvider>
-);
-
 const App = () => {
   return (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/en/*" element={<AppRoutes />} />
-          <Route path="/*" element={<AppRoutes />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <LanguageProvider>
+            <Routes>
+              {/* English routes */}
+              <Route path="/en" element={<Index />} />
+              <Route path="/en/catalog" element={<CatalogPage />} />
+              {/* Russian routes (default) */}
+              <Route path="/" element={<Index />} />
+              <Route path="/catalog" element={<CatalogPage />} />
+              {/* 404 */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </LanguageProvider>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
   );
 };
 
