@@ -21,7 +21,6 @@ const AppRoutes = () => (
 );
 
 const App = () => {
-  console.log("[v0] App component rendering");
   return (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
