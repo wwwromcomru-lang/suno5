@@ -1,38 +1,8 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { Toaster } from "@/components/ui/toaster";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { LanguageProvider } from "@/i18n/LanguageContext";
-import Index from "./pages/Index.tsx";
-import CatalogPage from "./pages/CatalogPage.tsx";
-import NotFound from "./pages/NotFound.tsx";
-
-const queryClient = new QueryClient();
-
-const App = () => {
+export default function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <LanguageProvider>
-            <Routes>
-              {/* English routes */}
-              <Route path="/en" element={<Index />} />
-              <Route path="/en/catalog" element={<CatalogPage />} />
-              {/* Russian routes (default) */}
-              <Route path="/" element={<Index />} />
-              <Route path="/catalog" element={<CatalogPage />} />
-              {/* 404 */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </LanguageProvider>
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
+    <div style={{ padding: '50px', textAlign: 'center', fontFamily: 'system-ui' }}>
+      <h1 style={{ fontSize: '32px', marginBottom: '20px' }}>Suno5.ru</h1>
+      <p style={{ fontSize: '18px', color: '#666' }}>Сайт загружается! Если вы видите это сообщение - всё работает.</p>
+    </div>
   );
-};
-
-export default App;
+}
