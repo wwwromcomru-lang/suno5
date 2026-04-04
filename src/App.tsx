@@ -20,7 +20,9 @@ const AppRoutes = () => (
   </LanguageProvider>
 );
 
-const App = () => (
+const App = () => {
+  console.log("[v0] App component rendering");
+  return (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
@@ -33,6 +35,7 @@ const App = () => (
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
-);
+  );
+};
 
 export default App;
