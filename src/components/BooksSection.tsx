@@ -29,7 +29,7 @@ const BooksSection = () => {
         <p className="mt-3 text-center text-muted-foreground text-lg">
           {t("books.subtitle")}
         </p>
-        <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div className="mt-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
           {books.map((book, i) => (
             <article
               key={i}
@@ -45,7 +45,7 @@ const BooksSection = () => {
                   height="280"
                 />
               </div>
-              <div className="p-5 flex flex-col flex-1">
+              <div className="p-4 flex flex-col flex-1">
                 <h3 className="font-bold text-lg text-foreground">{t(book.titleKey)}</h3>
                 <p className="mt-1 text-sm text-muted-foreground flex-1">{t(book.descKey)}</p>
                 <a
