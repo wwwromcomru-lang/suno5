@@ -12,14 +12,25 @@ import NotFound from "./pages/NotFound.tsx";
 const queryClient = new QueryClient();
 
 const ScrollToHash = () => {
-  const { hash } = useLocation();
+  const location = useLocation();
+
   useEffect(() => {
+    const { hash } = location;
     if (hash) {
-      setTimeout(() => {
-        document.querySelector(hash)?.scrollIntoView({ behavior: "smooth" });
-      }, 100);
+      const tryScroll = (attempts = 0) => {
+        const el = document.querySelector(hash);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        } else if (attempts < 20) {
+          requestAnimationFrame(() => tryScroll(attempts + 1));
+        }
+      };
+      tryScroll();
+    } else {
+      window.scrollTo({ top: 0, left: 0 });
     }
-  }, [hash]);
+  }, [location]);
+
   return null;
 };
 
@@ -28,7 +39,7 @@ const AppRoutes = () => (
     <ScrollToHash />
     <Routes>
       <Route path="/" element={<Index />} />
-      <Route path="catalog" element={<CatalogPage />} />
+      <Route path="/catalog" element={<CatalogPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </LanguageProvider>
