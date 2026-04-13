@@ -29,7 +29,7 @@ const BooksSection = () => {
         <p className="mt-3 text-center text-muted-foreground text-lg">
           {t("books.subtitle")}
         </p>
-        <div className="mt-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-5">
           {books.map((book, i) => (
             <article
               key={i}
