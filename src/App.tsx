@@ -1,5 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -10,8 +11,32 @@ import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
 
+const ScrollToHash = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    const { hash } = location;
+    if (hash) {
+      const tryScroll = (attempts = 0) => {
+        const el = document.querySelector(hash);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        } else if (attempts < 20) {
+          requestAnimationFrame(() => tryScroll(attempts + 1));
+        }
+      };
+      tryScroll();
+    } else {
+      window.scrollTo({ top: 0, left: 0 });
+    }
+  }, [location]);
+
+  return null;
+};
+
 const AppRoutes = () => (
   <LanguageProvider>
+    <ScrollToHash />
     <Routes>
       <Route path="/" element={<Index />} />
       <Route path="/catalog" element={<CatalogPage />} />
