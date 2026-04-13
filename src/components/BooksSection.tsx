@@ -35,14 +35,14 @@ const BooksSection = () => {
               key={i}
               className="animate-in-view group bg-background rounded-2xl overflow-hidden shadow-sm border border-border hover:shadow-xl transition-shadow duration-300 flex flex-col"
             >
-              <div className="aspect-[3/4] overflow-hidden">
+              <div className="aspect-[3/4] overflow-hidden flex items-center justify-center bg-muted/30">
                 <img
                   src={book.img}
                   alt={`${t("books.coverAlt")} «${t(book.titleKey)}»`}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-[70%] h-[70%] object-contain group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
-                  width="300"
-                  height="400"
+                  width="210"
+                  height="280"
                 />
               </div>
               <div className="p-5 flex flex-col flex-1">
