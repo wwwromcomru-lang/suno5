@@ -29,17 +29,17 @@ const BooksSection = () => {
         <p className="mt-3 text-center text-muted-foreground text-lg">
           {t("books.subtitle")}
         </p>
-        <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
           {books.map((book, i) => (
             <article
               key={i}
               className="animate-in-view group bg-background rounded-2xl overflow-hidden shadow-sm border border-border hover:shadow-xl transition-shadow duration-300 flex flex-col"
             >
-              <div className="aspect-[3/4] overflow-hidden flex items-center justify-center bg-muted/30">
+              <div className="aspect-[3/4] overflow-hidden">
                 <img
                   src={book.img}
                   alt={`${t("books.coverAlt")} «${t(book.titleKey)}»`}
-                  className="w-[70%] h-[70%] object-contain group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                   width="210"
                   height="280"
