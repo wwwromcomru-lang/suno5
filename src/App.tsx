@@ -14,7 +14,7 @@ const AppRoutes = () => (
   <LanguageProvider>
     <Routes>
       <Route path="/" element={<Index />} />
-      <Route path="/catalog" element={<CatalogPage />} />
+      <Route path="catalog" element={<CatalogPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </LanguageProvider>
