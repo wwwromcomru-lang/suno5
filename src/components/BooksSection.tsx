@@ -45,7 +45,7 @@ const BooksSection = () => {
                   height="280"
                 />
               </div>
-              <div className="p-5 flex flex-col flex-1">
+              <div className="p-4 flex flex-col flex-1">
                 <h3 className="font-bold text-lg text-foreground">{t(book.titleKey)}</h3>
                 <p className="mt-1 text-sm text-muted-foreground flex-1">{t(book.descKey)}</p>
                 <a
