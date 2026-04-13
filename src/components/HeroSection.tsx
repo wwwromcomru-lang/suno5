@@ -1,5 +1,4 @@
 import { useLanguage } from "@/i18n/LanguageContext";
-import CountdownTimer from "./CountdownTimer";
 
 const HeroSection = () => {
   const { t } = useLanguage();
@@ -7,8 +6,7 @@ const HeroSection = () => {
   return (
     <section className="hero-bg pt-32 pb-20 md:pt-40 md:pb-28" aria-labelledby="hero-heading">
       <div className="container text-center">
-        <CountdownTimer />
-        <h1 id="hero-heading" className="mt-8 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-foreground">
+        <h1 id="hero-heading" className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-foreground">
           {t("hero.title")}
           <br />
           <span className="brand-gradient-text text-2xl">{t("hero.from")} <a href="https://mastersuno.ru" target="_blank" rel="noopener noreferrer" className="brand-gradient-text hover:underline transition-all">MASTERSUNO.RU</a></span>
