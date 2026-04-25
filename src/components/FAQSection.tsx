@@ -13,13 +13,34 @@ const faqKeys: { qKey: TranslationKey; aKey: TranslationKey }[] = [
   { qKey: "faq.q3", aKey: "faq.a3" },
   { qKey: "faq.q4", aKey: "faq.a4" },
   { qKey: "faq.q5", aKey: "faq.a5" },
+  { qKey: "faq.q6", aKey: "faq.a6" },
+  { qKey: "faq.q7", aKey: "faq.a7" },
+  { qKey: "faq.q8", aKey: "faq.a8" },
+  { qKey: "faq.q9", aKey: "faq.a9" },
 ];
 
 const FAQSection = () => {
   const { t } = useLanguage();
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqKeys.map((item) => ({
+      "@type": "Question",
+      name: t(item.qKey),
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: t(item.aKey),
+      },
+    })),
+  };
+
   return (
     <section id="faq" className="py-20 md:py-28 bg-muted/30">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <div className="container max-w-2xl">
         <h2 className="text-3xl md:text-4xl font-extrabold text-center text-foreground">
           {t("faq.title")}
