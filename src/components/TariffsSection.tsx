@@ -1,4 +1,5 @@
 import { useLanguage } from "@/i18n/LanguageContext";
+import PriceHikeTimer from "@/components/PriceHikeTimer";
 
 const LAVA_LINK = "https://app.lava.top/posts/a683bc4b-d25b-4ec6-a14a-ab80c5a4ffb9";
 
@@ -52,6 +53,7 @@ const TariffsSection = () => {
             <p className="mt-3 text-sm md:text-base text-foreground/80 leading-relaxed">
               {t("pricealert.desc")}
             </p>
+            <PriceHikeTimer />
           </aside>
         </div>
       </div>
