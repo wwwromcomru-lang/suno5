@@ -12,6 +12,9 @@ import book6 from "@/assets/book6.png";
 import book7 from "@/assets/book7.png";
 import book8 from "@/assets/book8.png";
 import book9 from "@/assets/book9.png";
+import book10 from "@/assets/book10.png";
+import book11 from "@/assets/book11.png";
+import book12 from "@/assets/book12.png";
 
 const books: { img: string; titleKey: TranslationKey; descKey: TranslationKey; link: string }[] = [
   { img: book1, titleKey: "book1.title", descKey: "book1.desc", link: "https://sunoprompt.ru/" },
@@ -23,7 +26,9 @@ const books: { img: string; titleKey: TranslationKey; descKey: TranslationKey; l
   { img: book7, titleKey: "book7.title", descKey: "book7.desc", link: "https://www.suno5.ru/books/7" },
   { img: book8, titleKey: "book8.title", descKey: "book8.desc", link: "https://www.suno5.ru/books/8" },
   { img: book9, titleKey: "book9.title", descKey: "book9.desc", link: "https://www.suno5.ru/books/9" },
-  
+  { img: book10, titleKey: "book10.title", descKey: "book10.desc", link: "https://mirhitov.ru/" },
+  { img: book11, titleKey: "book11.title", descKey: "book11.desc", link: "https://mirhitov.ru/1may/" },
+  { img: book12, titleKey: "book12.title", descKey: "book12.desc", link: "https://mirhitov.ru/9may/" },
 ];
 
 const CatalogPage = () => {
@@ -61,6 +66,15 @@ const CatalogPage = () => {
           <p className="mt-3 text-center text-muted-foreground text-lg max-w-xl mx-auto">
             {t("catalog.subtitle")}
           </p>
+
+          <div className="mt-10 mx-auto max-w-3xl rounded-2xl border-2 border-accent bg-accent/10 p-5 sm:p-6 shadow-sm">
+            <h2 className="font-extrabold text-lg sm:text-xl text-foreground">
+              {t("pricealert.title")}
+            </h2>
+            <p className="mt-2 text-sm sm:text-base text-foreground/80 leading-relaxed">
+              {t("pricealert.desc")}
+            </p>
+          </div>
 
           <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {books.map((book, i) =>

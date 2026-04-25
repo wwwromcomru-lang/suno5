@@ -59,7 +59,7 @@ export const translations = {
   "books.title": { ru: "Твои книги в подписке", en: "Your Books in Subscription" },
   "books.subtitle": { ru: "И каждый месяц добавляются новые", en: "New books added every month" },
   "books.buy": { ru: "Купить отдельно →", en: "Buy Separately →" },
-  "books.viewAll": { ru: "Смотреть все книги →", en: "View All Books →" },
+  "books.viewAll": { ru: "Здесь Полный каталог →", en: "Full Catalog Here →" },
   "books.coverAlt": { ru: "Обложка книги", en: "Book cover" },
 
   // Book titles & descriptions
@@ -107,6 +107,26 @@ export const translations = {
   "book9.desc": {
     ru: "Книга о гармонии для новичков в музыке. Без теории — всё через понятные слова и готовые промпты.",
     en: "A book about Harmony for music beginners. No theory — everything through simple words and ready-made prompts.",
+  },
+  "book10.title": { ru: "Праздники под ключ с Suno", en: "Holidays Turn-Key with Suno" },
+  "book10.desc": {
+    ru: "80+ страниц промптов для свадеб, корпоративов, дней рождения и Reels. Идеальный трек за 5–10 минут.",
+    en: "80+ pages of prompts for weddings, corporate events, birthdays and Reels. Perfect track in 5–10 minutes.",
+  },
+  "book11.title": { ru: "1 Мая — Праздник Весны и Труда", en: "May 1 — Spring & Labour Day" },
+  "book11.desc": {
+    ru: "150+ промптов: марши, поп-хиты, фолк и дэнс. Майские треки для YouTube, Reels и Telegram за вечер.",
+    en: "150+ prompts: marches, pop hits, folk and dance. May tracks for YouTube, Reels and Telegram in one evening.",
+  },
+  "book12.title": { ru: "9 Мая — День Победы", en: "May 9 — Victory Day" },
+  "book12.desc": {
+    ru: "Военные марши, кинематографичный оркестр и лирические баллады для парадов, хроники и семейных историй.",
+    en: "Military marches, cinematic orchestra and lyrical ballads for parades, chronicles and family stories.",
+  },
+  "pricealert.title": { ru: "⚡ Цена вырастет в мае", en: "⚡ Price increases in May" },
+  "pricealert.desc": {
+    ru: "Библиотека растёт — растёт и её ценность. В мае цена подписки будет повышена. Кто оформит подписку сейчас по старой цене — будет продлевать доступ к каталогу по этой же старой цене. После повышения новые подписчики платят уже новую цену.",
+    en: "The library is growing — and so is its value. In May the subscription price will increase. Subscribe now at the old price and you keep renewing at the same old price. After the increase, new subscribers pay the new price.",
   },
 
   // Tariffs
