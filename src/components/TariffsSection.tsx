@@ -19,7 +19,7 @@ const TariffsSection = () => {
         <p className="mt-3 text-center text-muted-foreground text-lg">
           {t("tariffs.subtitle")}
         </p>
-        <div className="mt-14 max-w-md mx-auto">
+        <div className="mt-14 grid gap-6 md:grid-cols-2 max-w-4xl mx-auto items-stretch">
           <article className="animate-in-view relative rounded-2xl p-10 border border-primary popular-glow bg-card shadow-xl text-center">
             <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold px-4 py-1 rounded-full">
               {t("tariffs.badge")}
@@ -44,6 +44,15 @@ const TariffsSection = () => {
               {t("tariffs.cta")}
             </a>
           </article>
+
+          <aside className="animate-in-view rounded-2xl p-8 border-2 border-accent bg-accent/10 shadow-sm flex flex-col justify-center">
+            <h3 className="font-extrabold text-xl md:text-2xl text-foreground">
+              {t("pricealert.title")}
+            </h3>
+            <p className="mt-3 text-sm md:text-base text-foreground/80 leading-relaxed">
+              {t("pricealert.desc")}
+            </p>
+          </aside>
         </div>
       </div>
     </section>
