@@ -8,7 +8,7 @@ import { booksData } from "@/data/books";
 const books = booksData;
 
 const CatalogPage = () => {
-  const { t, prefix } = useLanguage();
+  const { t, prefix, lang } = useLanguage();
 
   useEffect(() => {
     document.title = t("catalog.meta.title");
