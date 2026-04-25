@@ -192,6 +192,26 @@ export const translations = {
     ru: "Минимум одна новая книга каждый месяц. Также регулярно обновляются существующие книги с учётом изменений Suno AI.",
     en: "At least one new book every month. Existing books are also regularly updated for Suno AI changes.",
   },
+  "faq.q6": { ru: "Какие способы оплаты вы принимаете?", en: "What payment methods do you accept?" },
+  "faq.a6": {
+    ru: "Принимаем оплату картами РФ и других стран, СБП, а также в € и $. Платёжная платформа Lava обрабатывает все транзакции безопасно.",
+    en: "We accept cards from Russia and other countries, SBP, and payments in € and $. All transactions are processed securely via Lava.",
+  },
+  "faq.q7": { ru: "Возможен ли возврат средств?", en: "Are refunds possible?" },
+  "faq.a7": {
+    ru: "Да, в течение 7 дней с момента оплаты, если вы ещё не скачали значительную часть материалов. Напишите в Telegram-поддержку.",
+    en: "Yes, within 7 days of payment if you haven't downloaded a significant portion of the materials. Contact our Telegram support.",
+  },
+  "faq.q8": { ru: "На каких языках доступны книги?", en: "What languages are the books available in?" },
+  "faq.a8": {
+    ru: "Все книги доступны на русском. Промпты внутри — на английском (как требует Suno AI), с переводами и пояснениями на русском.",
+    en: "All books are in Russian. The prompts inside are in English (as required by Suno AI), with translations and explanations.",
+  },
+  "faq.q9": { ru: "Можно ли использовать треки коммерчески?", en: "Can I use the tracks commercially?" },
+  "faq.a9": {
+    ru: "Права на сгенерированные треки определяются вашим тарифом в Suno AI. Книга даёт промпты — коммерческие права зависят от вашей подписки Suno.",
+    en: "Rights to generated tracks depend on your Suno AI plan. The book gives you prompts — commercial rights depend on your Suno subscription.",
+  },
 
   // Footer
   "footer.rights": { ru: "Все права защищены", en: "All rights reserved" },

@@ -1,39 +1,14 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { TranslationKey } from "@/i18n/translations";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import PriceHikeTimer from "@/components/PriceHikeTimer";
-import book1 from "@/assets/book1.png";
-import book2 from "@/assets/book2.png";
-import book3 from "@/assets/book3.png";
-import book4 from "@/assets/book4.png";
-import book5 from "@/assets/book5.png";
-import book6 from "@/assets/book6.png";
-import book7 from "@/assets/book7.png";
-import book8 from "@/assets/book8.png";
-import book9 from "@/assets/book9.png";
-import book10 from "@/assets/book10.png";
-import book11 from "@/assets/book11.png";
-import book12 from "@/assets/book12.png";
+import { booksData } from "@/data/books";
 
-const books: { img: string; titleKey: TranslationKey; descKey: TranslationKey; link: string }[] = [
-  { img: book1, titleKey: "book1.title", descKey: "book1.desc", link: "https://sunoprompt.ru/" },
-  { img: book2, titleKey: "book2.title", descKey: "book2.desc", link: "https://sunoprompt.ru/books/2/" },
-  { img: book3, titleKey: "book3.title", descKey: "book3.desc", link: "https://suno5.ru/books/3/" },
-  { img: book4, titleKey: "book4.title", descKey: "book4.desc", link: "https://suno5.ru/books/4/" },
-  { img: book5, titleKey: "book5.title", descKey: "book5.desc", link: "https://www.suno5.ru/books/5" },
-  { img: book6, titleKey: "book6.title", descKey: "book6.desc", link: "https://www.suno5.ru/books/6" },
-  { img: book7, titleKey: "book7.title", descKey: "book7.desc", link: "https://www.suno5.ru/books/7" },
-  { img: book8, titleKey: "book8.title", descKey: "book8.desc", link: "https://www.suno5.ru/books/8" },
-  { img: book9, titleKey: "book9.title", descKey: "book9.desc", link: "https://www.suno5.ru/books/9" },
-  { img: book10, titleKey: "book10.title", descKey: "book10.desc", link: "https://mirhitov.ru/" },
-  { img: book11, titleKey: "book11.title", descKey: "book11.desc", link: "https://mirhitov.ru/1may/" },
-  { img: book12, titleKey: "book12.title", descKey: "book12.desc", link: "https://mirhitov.ru/9may/" },
-];
+const books = booksData;
 
 const CatalogPage = () => {
-  const { t, prefix } = useLanguage();
+  const { t, prefix, lang } = useLanguage();
 
   useEffect(() => {
     document.title = t("catalog.meta.title");
@@ -79,27 +54,38 @@ const CatalogPage = () => {
           </div>
 
           <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {books.map((book, i) =>
+            {books.map((book) =>
               <article
-                key={i}
+                key={book.slug}
                 className="group flex items-center gap-5 bg-card rounded-2xl overflow-hidden border border-border hover:shadow-lg transition-shadow duration-300 p-4">
-                <img
-                  src={book.img}
-                  alt={`${t("books.coverAlt")} «${t(book.titleKey)}»`}
-                  className="w-20 h-28 sm:w-24 sm:h-32 object-cover rounded-lg flex-shrink-0 group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                  width="96"
-                  height="128" />
+                <Link to={prefix + `/book/${book.slug}`} className="flex-shrink-0">
+                  <img
+                    src={book.img}
+                    alt={`${t("books.coverAlt")} «${t(book.titleKey)}»`}
+                    className="w-20 h-28 sm:w-24 sm:h-32 object-cover rounded-lg group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    width="96"
+                    height="128" />
+                </Link>
                 <div className="min-w-0 flex-1">
-                  <h2 className="font-bold text-base sm:text-lg text-foreground">{t(book.titleKey)}</h2>
+                  <Link to={prefix + `/book/${book.slug}`}>
+                    <h2 className="font-bold text-base sm:text-lg text-foreground hover:text-primary transition-colors">{t(book.titleKey)}</h2>
+                  </Link>
                   <p className="mt-1 text-sm text-muted-foreground line-clamp-2">{t(book.descKey)}</p>
-                  <a
-                    href={book.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-2 inline-block bg-accent text-accent-foreground px-4 py-1.5 rounded-lg text-sm font-bold hover:brightness-110 transition-all shadow-sm hover:shadow-md">
-                    {t("books.buy")}
-                  </a>
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    <a
+                      href={book.buyLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block bg-accent text-accent-foreground px-4 py-1.5 rounded-lg text-sm font-bold hover:brightness-110 transition-all shadow-sm hover:shadow-md">
+                      {t("books.buy")}
+                    </a>
+                    <Link
+                      to={prefix + `/book/${book.slug}`}
+                      className="inline-block border border-border text-foreground px-4 py-1.5 rounded-lg text-sm font-semibold hover:bg-muted transition-colors">
+                      {lang === "ru" ? "Подробнее" : "Details"}
+                    </Link>
+                  </div>
                 </div>
               </article>
             )}
