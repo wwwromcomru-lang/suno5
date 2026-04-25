@@ -29,7 +29,7 @@ const BooksSection = () => {
         <p className="mt-3 text-center text-muted-foreground text-lg">
           {t("books.subtitle")}
         </p>
-        <div className="mt-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
+        <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
           {books.map((book, i) => (
             <article
               key={i}
@@ -60,10 +60,10 @@ const BooksSection = () => {
             </article>
           ))}
         </div>
-        <div className="mt-10 text-center">
+        <div className="mt-12 text-center">
           <Link
             to={prefix + "/catalog"}
-            className="inline-block bg-primary text-primary-foreground px-8 py-3.5 rounded-xl font-bold hover:opacity-90 transition-opacity"
+            className="inline-block bg-primary text-primary-foreground px-10 md:px-14 py-5 md:py-6 rounded-2xl font-extrabold text-lg md:text-xl shadow-lg hover:shadow-xl hover:opacity-90 transition-all"
           >
             {t("books.viewAll")}
           </Link>
