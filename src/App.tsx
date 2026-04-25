@@ -7,7 +7,9 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import Index from "./pages/Index.tsx";
 import CatalogPage from "./pages/CatalogPage.tsx";
+import BookPage from "./pages/BookPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import StickyMobileCTA from "./components/StickyMobileCTA";
 
 const queryClient = new QueryClient();
 
@@ -37,9 +39,11 @@ const ScrollToHash = () => {
 const AppRoutes = () => (
   <LanguageProvider>
     <ScrollToHash />
+    <StickyMobileCTA />
     <Routes>
       <Route path="/" element={<Index />} />
       <Route path="/catalog" element={<CatalogPage />} />
+      <Route path="/book/:slug" element={<BookPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </LanguageProvider>
