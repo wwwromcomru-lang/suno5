@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { TranslationKey } from "@/i18n/translations";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import PriceHikeTimer from "@/components/PriceHikeTimer";
 import book1 from "@/assets/book1.png";
 import book2 from "@/assets/book2.png";
 import book3 from "@/assets/book3.png";
@@ -74,6 +75,7 @@ const CatalogPage = () => {
             <p className="mt-2 text-sm sm:text-base text-foreground/80 leading-relaxed">
               {t("pricealert.desc")}
             </p>
+            <PriceHikeTimer />
           </div>
 
           <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
