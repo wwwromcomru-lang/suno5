@@ -75,6 +75,7 @@ const CatalogPage = () => {
             <p className="mt-2 text-sm sm:text-base text-foreground/80 leading-relaxed">
               {t("pricealert.desc")}
             </p>
+            <PriceHikeTimer />
           </div>
 
           <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
