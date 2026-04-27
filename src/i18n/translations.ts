@@ -212,6 +212,26 @@ export const translations = {
     ru: "Права на сгенерированные треки определяются вашим тарифом в Suno AI. Книга даёт промпты — коммерческие права зависят от вашей подписки Suno.",
     en: "Rights to generated tracks depend on your Suno AI plan. The book gives you prompts — commercial rights depend on your Suno subscription.",
   },
+  "faq.q10": { ru: "Какие карты и страны поддерживаются?", en: "Which cards and countries are supported?" },
+  "faq.a10": {
+    ru: "Принимаем карты Visa, Mastercard, МИР, UnionPay — выпущенные в РФ, СНГ, Европе, США и большинстве стран мира. Также доступны СБП, Apple Pay/Google Pay и оплата в евро/долларах через Lava.",
+    en: "We accept Visa, Mastercard, MIR and UnionPay cards issued in Russia, CIS, Europe, the US and most countries. SBP, Apple Pay/Google Pay and EUR/USD payments via Lava are also available.",
+  },
+  "faq.q11": { ru: "Как оформить возврат и сколько он идёт?", en: "How do I request a refund and how long does it take?" },
+  "faq.a11": {
+    ru: "Напишите в Telegram @master_suno в течение 7 дней с момента оплаты — укажите email и причину. Деньги вернутся на ту же карту за 1–10 рабочих дней (срок зависит от банка). Комиссий не удерживаем.",
+    en: "Message @master_suno on Telegram within 7 days of payment — include the email and reason. Funds return to the same card in 1–10 business days (depending on your bank). No fees are charged.",
+  },
+  "faq.q12": { ru: "Как отменить автопродление подписки?", en: "How do I cancel auto-renewal?" },
+  "faq.a12": {
+    ru: "В письме после оплаты есть ссылка на личный кабинет Lava — там автосписание отключается одной кнопкой. Также можно написать в @master_suno, мы отменим за вас. Доступ сохранится до конца оплаченного периода.",
+    en: "Your payment receipt has a link to the Lava personal cabinet where you can disable auto-renewal in one click. You can also message @master_suno and we'll cancel it. Access stays active until the end of the paid period.",
+  },
+  "faq.q13": { ru: "Что будет, если оплата не прошла?", en: "What happens if my payment fails?" },
+  "faq.a13": {
+    ru: "Деньги не списываются — попробуйте другую карту, СБП или оплату в € / $. Если средства ушли, но доступ не пришёл — напишите в @master_suno со скриншотом, решим за 15 минут.",
+    en: "No money is charged — try another card, SBP or EUR/USD payment. If funds were debited but access didn't arrive, message @master_suno with a screenshot — we'll fix it within 15 minutes.",
+  },
 
   // Footer
   "footer.rights": { ru: "Все права защищены", en: "All rights reserved" },
