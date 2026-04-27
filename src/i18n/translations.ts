@@ -238,9 +238,31 @@ export const translations = {
     en: "Suno AI Prompt Books Catalog — Suno5.ru",
   },
   "catalog.meta.desc": {
-    ru: "Полный каталог книг промптов для Suno AI. 4 книги, 5000+ промптов — стили мировых звёзд, саунд-дизайн, джинглы и русский хит.",
-    en: "Complete catalog of Suno AI prompt books. 7 books, 5000+ prompts — world star styles, sound design, jingles and more.",
+    ru: "12 книг и 5000+ готовых промптов для Suno AI: стили звёзд, саунд-дизайн, джинглы, шансон, тренировки, праздники. Подписка с обновлениями.",
+    en: "12 books & 5000+ ready prompts for Suno AI: star styles, sound design, jingles, chanson, workout, holidays. Subscription with updates.",
   },
+
+  // SEO suffix for book pages
+  "book.meta.suffix": { ru: "— Книга промптов Suno AI | Suno5.ru", en: "— Suno AI Prompt Book | Suno5.ru" },
+  "book.meta.descPrefix": { ru: "Готовые промпты Suno AI: ", en: "Ready Suno AI prompts: " },
+
+  // How subscription works
+  "how.title": { ru: "Как работает подписка", en: "How the subscription works" },
+  "how.subtitle": { ru: "3 простых шага — и вы создаёте хиты в Suno AI уже сегодня", en: "3 simple steps — start making hits in Suno AI today" },
+  "how.s1.title": { ru: "1. Оплата", en: "1. Payment" },
+  "how.s1.desc": { ru: "Выберите подписку и оплатите картой РФ, СБП, € или $. Безопасно через Lava.", en: "Choose a plan and pay by card, SBP, € or $. Secure via Lava." },
+  "how.s2.title": { ru: "2. Мгновенный доступ", en: "2. Instant access" },
+  "how.s2.desc": { ru: "Сразу после оплаты открывается весь каталог из 12 книг и 5000+ промптов.", en: "Right after payment you unlock the full catalog of 12 books and 5000+ prompts." },
+  "how.s3.title": { ru: "3. Новые книги каждый месяц", en: "3. New books every month" },
+  "how.s3.desc": { ru: "Минимум одна новая книга и 500 свежих промптов ежемесячно — без доплат.", en: "At least one new book and 500 fresh prompts every month — at no extra cost." },
+
+  // Support
+  "support.title": { ru: "Нужна помощь?", en: "Need help?" },
+  "support.subtitle": { ru: "Опишите вопрос — откроем чат в Telegram с уже готовым сообщением.", en: "Describe your question — we'll open a Telegram chat with a prefilled message." },
+  "support.placeholder": { ru: "Например: вопрос по оплате из Европы", en: "E.g. payment question from Europe" },
+  "support.cta": { ru: "Поддержка в Telegram", en: "Telegram Support" },
+  "support.open": { ru: "Открыть чат", en: "Open chat" },
+  "support.prefill": { ru: "Здравствуйте! У меня вопрос: ", en: "Hello! I have a question: " },
 } as const;
 
 export type TranslationKey = keyof typeof translations;
