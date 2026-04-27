@@ -17,6 +17,10 @@ const faqKeys: { qKey: TranslationKey; aKey: TranslationKey }[] = [
   { qKey: "faq.q7", aKey: "faq.a7" },
   { qKey: "faq.q8", aKey: "faq.a8" },
   { qKey: "faq.q9", aKey: "faq.a9" },
+  { qKey: "faq.q10", aKey: "faq.a10" },
+  { qKey: "faq.q11", aKey: "faq.a11" },
+  { qKey: "faq.q12", aKey: "faq.a12" },
+  { qKey: "faq.q13", aKey: "faq.a13" },
 ];
 
 const FAQSection = () => {
