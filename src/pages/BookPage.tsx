@@ -93,16 +93,24 @@ const BookPage = () => {
 
       <main className="py-12 md:py-20">
         <div className="container max-w-5xl">
-          <nav aria-label="breadcrumb" className="text-sm text-muted-foreground mb-6">
-            <Link to={prefix + "/"} className="hover:text-foreground">
-              {lang === "ru" ? "Главная" : "Home"}
-            </Link>
-            <span className="mx-2">/</span>
-            <Link to={prefix + "/catalog"} className="hover:text-foreground">
-              {lang === "ru" ? "Каталог" : "Catalog"}
-            </Link>
-            <span className="mx-2">/</span>
-            <span className="text-foreground">{t(book.titleKey)}</span>
+          <nav aria-label="breadcrumb" className="mb-6">
+            <ol className="flex flex-wrap items-center gap-1.5 text-sm text-muted-foreground">
+              <li>
+                <Link to={prefix + "/"} className="hover:text-foreground transition-colors">
+                  {lang === "ru" ? "Главная" : "Home"}
+                </Link>
+              </li>
+              <ChevronRight className="w-4 h-4 opacity-60" aria-hidden="true" />
+              <li>
+                <Link to={prefix + "/catalog"} className="hover:text-foreground transition-colors">
+                  {lang === "ru" ? "Каталог" : "Catalog"}
+                </Link>
+              </li>
+              <ChevronRight className="w-4 h-4 opacity-60" aria-hidden="true" />
+              <li className="text-foreground font-medium truncate max-w-[200px] sm:max-w-none" aria-current="page">
+                {t(book.titleKey)}
+              </li>
+            </ol>
           </nav>
 
           <div className="grid md:grid-cols-2 gap-10 items-start">
