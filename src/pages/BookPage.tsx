@@ -11,12 +11,21 @@ const BookPage = () => {
 
   useEffect(() => {
     if (!book) return;
-    const title = `${t(book.titleKey)} — ${t("hero.title")} Suno5.ru`;
-    document.title = title.slice(0, 60);
-    const desc = t(book.descKey);
+    const bookTitle = t(book.titleKey);
+    const title = `${bookTitle} ${t("book.meta.suffix")}`;
+    document.title = title.length > 60 ? `${bookTitle} | Suno5.ru` : title;
+    const desc = `${t("book.meta.descPrefix")}${t(book.descKey)}`;
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", desc.slice(0, 160));
-  }, [book, t]);
+    // canonical
+    let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!link) {
+      link = document.createElement("link");
+      link.rel = "canonical";
+      document.head.appendChild(link);
+    }
+    link.href = `${window.location.origin}${prefix}/book/${book.slug}`;
+  }, [book, t, prefix]);
 
   if (!book) {
     return <Navigate to={prefix + "/catalog"} replace />;
