@@ -202,6 +202,16 @@ const BookPage = () => {
               ))}
             </div>
           </section>
+
+          <div className="mt-16 text-center">
+            <Link
+              to={prefix + "/catalog"}
+              className="inline-flex items-center gap-2 bg-card border border-border text-foreground px-6 py-3 rounded-xl font-bold hover:bg-muted transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" aria-hidden="true" />
+              {lang === "ru" ? "Вернуться в каталог" : "Back to catalog"}
+            </Link>
+          </div>
         </div>
       </main>
 
