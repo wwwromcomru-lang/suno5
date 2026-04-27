@@ -51,11 +51,26 @@ const BookPage = () => {
     },
   };
 
+  const origin = typeof window !== "undefined" ? window.location.origin : "";
+  const breadcrumbsJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: lang === "ru" ? "Главная" : "Home", item: `${origin}${prefix}/` },
+      { "@type": "ListItem", position: 2, name: lang === "ru" ? "Каталог" : "Catalog", item: `${origin}${prefix}/catalog` },
+      { "@type": "ListItem", position: 3, name: t(book.titleKey), item: `${origin}${prefix}/book/${book.slug}` },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsJsonLd) }}
       />
 
       <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
