@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Link, useParams, Navigate } from "react-router-dom";
+import { ChevronRight, ArrowLeft } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { booksData, getBookBySlug } from "@/data/books";
@@ -51,11 +52,26 @@ const BookPage = () => {
     },
   };
 
+  const origin = typeof window !== "undefined" ? window.location.origin : "";
+  const breadcrumbsJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: lang === "ru" ? "Главная" : "Home", item: `${origin}${prefix}/` },
+      { "@type": "ListItem", position: 2, name: lang === "ru" ? "Каталог" : "Catalog", item: `${origin}${prefix}/catalog` },
+      { "@type": "ListItem", position: 3, name: t(book.titleKey), item: `${origin}${prefix}/book/${book.slug}` },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsJsonLd) }}
       />
 
       <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
@@ -77,16 +93,24 @@ const BookPage = () => {
 
       <main className="py-12 md:py-20">
         <div className="container max-w-5xl">
-          <nav aria-label="breadcrumb" className="text-sm text-muted-foreground mb-6">
-            <Link to={prefix + "/"} className="hover:text-foreground">
-              {lang === "ru" ? "Главная" : "Home"}
-            </Link>
-            <span className="mx-2">/</span>
-            <Link to={prefix + "/catalog"} className="hover:text-foreground">
-              {lang === "ru" ? "Каталог" : "Catalog"}
-            </Link>
-            <span className="mx-2">/</span>
-            <span className="text-foreground">{t(book.titleKey)}</span>
+          <nav aria-label="breadcrumb" className="mb-6">
+            <ol className="flex flex-wrap items-center gap-1.5 text-sm text-muted-foreground">
+              <li>
+                <Link to={prefix + "/"} className="hover:text-foreground transition-colors">
+                  {lang === "ru" ? "Главная" : "Home"}
+                </Link>
+              </li>
+              <ChevronRight className="w-4 h-4 opacity-60" aria-hidden="true" />
+              <li>
+                <Link to={prefix + "/catalog"} className="hover:text-foreground transition-colors">
+                  {lang === "ru" ? "Каталог" : "Catalog"}
+                </Link>
+              </li>
+              <ChevronRight className="w-4 h-4 opacity-60" aria-hidden="true" />
+              <li className="text-foreground font-medium truncate max-w-[200px] sm:max-w-none" aria-current="page">
+                {t(book.titleKey)}
+              </li>
+            </ol>
           </nav>
 
           <div className="grid md:grid-cols-2 gap-10 items-start">
@@ -178,6 +202,16 @@ const BookPage = () => {
               ))}
             </div>
           </section>
+
+          <div className="mt-16 text-center">
+            <Link
+              to={prefix + "/catalog"}
+              className="inline-flex items-center gap-2 bg-card border border-border text-foreground px-6 py-3 rounded-xl font-bold hover:bg-muted transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" aria-hidden="true" />
+              {lang === "ru" ? "Вернуться в каталог" : "Back to catalog"}
+            </Link>
+          </div>
         </div>
       </main>
 
