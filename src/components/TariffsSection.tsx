@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import PriceHikeTimer from "@/components/PriceHikeTimer";
-import { getCurrentPrice, isBeforeHike } from "@/lib/pricing";
+import AnimatedPrice from "@/components/AnimatedPrice";
+import { isBeforeHike } from "@/lib/pricing";
 
 const LAVA_LINK = "https://app.lava.top/posts/a683bc4b-d25b-4ec6-a14a-ab80c5a4ffb9";
 
@@ -15,7 +16,6 @@ const TariffsSection = () => {
     return () => clearInterval(id);
   }, []);
 
-  const price = getCurrentPrice(now);
   const showHike = isBeforeHike(now);
 
   const features = [
@@ -37,11 +37,7 @@ const TariffsSection = () => {
             <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold px-4 py-1 rounded-full">
               {t("tariffs.badge")}
             </span>
-            <div className="mt-4">
-              <span className="text-6xl font-extrabold text-foreground">{price}</span>
-              <span className="text-muted-foreground ml-1 text-lg">{t("tariffs.price")}</span>
-            </div>
-            <p className="mt-2 text-sm text-muted-foreground">{t("tariffs.currencies")}</p>
+            <AnimatedPrice />
             <ul className="mt-8 space-y-3 text-left inline-block">
               {features.map((f, j) => (
                 <li key={j} className="flex items-center gap-2 text-sm text-foreground">
