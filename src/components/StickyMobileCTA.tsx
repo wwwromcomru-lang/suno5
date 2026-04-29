@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { useLocation } from "react-router-dom";
+import { tariffsAnchor } from "@/lib/pricing";
 
 const StickyMobileCTA = () => {
   const { t, prefix } = useLanguage();
@@ -8,14 +9,15 @@ const StickyMobileCTA = () => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY > 400);
+    const onScroll = () => setVisible(window.scrollY > 200);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const isHome = location.pathname === prefix + "/" || location.pathname === prefix;
-  const href = isHome ? "#tariffs" : prefix + "/#tariffs";
+  const homePath = prefix === "" ? "/" : prefix;
+  const isHome = location.pathname === homePath || location.pathname === prefix + "/";
+  const href = tariffsAnchor(prefix, isHome);
 
   return (
     <div
@@ -25,6 +27,7 @@ const StickyMobileCTA = () => {
     >
       <a
         href={href}
+        aria-label={t("nav.subscribe")}
         className="block w-full text-center bg-accent text-accent-foreground py-4 rounded-2xl font-extrabold shadow-2xl hover:opacity-90 transition-opacity"
       >
         {t("nav.subscribe")} →
