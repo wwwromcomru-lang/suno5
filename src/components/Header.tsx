@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { tariffsAnchor } from "@/lib/pricing";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
