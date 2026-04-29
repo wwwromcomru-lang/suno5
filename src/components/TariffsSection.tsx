@@ -37,11 +37,7 @@ const TariffsSection = () => {
             <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold px-4 py-1 rounded-full">
               {t("tariffs.badge")}
             </span>
-            <div className="mt-4">
-              <span className="text-6xl font-extrabold text-foreground">{price}</span>
-              <span className="text-muted-foreground ml-1 text-lg">{t("tariffs.price")}</span>
-            </div>
-            <p className="mt-2 text-sm text-muted-foreground">{t("tariffs.currencies")}</p>
+            <AnimatedPrice />
             <ul className="mt-8 space-y-3 text-left inline-block">
               {features.map((f, j) => (
                 <li key={j} className="flex items-center gap-2 text-sm text-foreground">
