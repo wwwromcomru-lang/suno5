@@ -37,7 +37,7 @@ const Header = () => {
         <div className="flex items-center gap-3">
           <LanguageSwitcher />
           <a
-            href="#tariffs"
+            href={tariffsHref}
             className="bg-accent text-accent-foreground px-5 py-2.5 rounded-lg font-bold text-sm hover:opacity-90 transition-opacity">
             {t("nav.subscribe")}
           </a>
