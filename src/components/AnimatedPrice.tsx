@@ -42,9 +42,11 @@ const AnimatedPrice = () => {
     <>
       <div className="mt-4 relative inline-flex items-baseline justify-center">
         {/* Кросс-фейд между значениями цены */}
-        <span className="relative inline-block min-w-[6ch] text-center" aria-live="polite">
+        <span className="relative inline-block min-w-[6ch] text-center">
           <span
             key={price}
+            aria-live="polite"
+            aria-atomic="true"
             className="inline-block text-6xl font-extrabold text-foreground transition-all duration-700 ease-out animate-fade-in"
             style={{
               textShadow: flash ? "0 0 28px hsl(var(--accent) / 0.7)" : "none",
@@ -53,11 +55,12 @@ const AnimatedPrice = () => {
           >
             {price}
           </span>
-          {/* Старая цена «улетает» зачёркнутой при смене */}
+          {/* Старая цена «улетает» зачёркнутой при смене — скрыта от скринридеров */}
           {flash && (
             <span
               aria-hidden="true"
-              className="absolute left-1/2 -translate-x-1/2 -top-7 text-2xl font-bold text-muted-foreground line-through opacity-0 animate-[fade-out_1.2s_ease-out_forwards]"
+              role="presentation"
+              className="absolute left-1/2 -translate-x-1/2 -top-7 text-2xl font-bold text-muted-foreground line-through opacity-0 animate-[fade-out_1.2s_ease-out_forwards] pointer-events-none select-none"
             >
               {OLD_PRICE}
             </span>
