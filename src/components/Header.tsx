@@ -1,10 +1,16 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { tariffsAnchor } from "@/lib/pricing";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const { t, prefix } = useLanguage();
+  const location = useLocation();
+  const homePath = prefix === "" ? "/" : prefix;
+  const isHome = location.pathname === homePath || location.pathname === prefix + "/";
+  const tariffsHref = tariffsAnchor(prefix, isHome);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -25,13 +31,13 @@ const Header = () => {
         </a>
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-muted-foreground" aria-label="Основная навигация">
           <a href="#books" className="hover:text-foreground transition-colors">{t("nav.books")}</a>
-          <a href="#tariffs" className="hover:text-foreground transition-colors">{t("nav.tariffs")}</a>
+          <a href={tariffsHref} className="hover:text-foreground transition-colors">{t("nav.tariffs")}</a>
           <a href="#reviews" className="hover:text-foreground transition-colors">{t("nav.reviews")}</a>
         </nav>
         <div className="flex items-center gap-3">
           <LanguageSwitcher />
           <a
-            href="#tariffs"
+            href={tariffsHref}
             className="bg-accent text-accent-foreground px-5 py-2.5 rounded-lg font-bold text-sm hover:opacity-90 transition-opacity">
             {t("nav.subscribe")}
           </a>

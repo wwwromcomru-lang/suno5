@@ -1,10 +1,22 @@
+import { useEffect, useState } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import PriceHikeTimer from "@/components/PriceHikeTimer";
+import { getCurrentPrice, isBeforeHike } from "@/lib/pricing";
 
 const LAVA_LINK = "https://app.lava.top/posts/a683bc4b-d25b-4ec6-a14a-ab80c5a4ffb9";
 
 const TariffsSection = () => {
   const { t } = useLanguage();
+  const [now, setNow] = useState(() => Date.now());
+
+  useEffect(() => {
+    // Тикаем раз в минуту — для авто-переключения цены ровно в дедлайн.
+    const id = setInterval(() => setNow(Date.now()), 60_000);
+    return () => clearInterval(id);
+  }, []);
+
+  const price = getCurrentPrice(now);
+  const showHike = isBeforeHike(now);
 
   const features = [
     t("tariffs.f1"), t("tariffs.f2"), t("tariffs.f3"),
@@ -20,13 +32,13 @@ const TariffsSection = () => {
         <p className="mt-3 text-center text-muted-foreground text-lg">
           {t("tariffs.subtitle")}
         </p>
-        <div className="mt-14 grid gap-6 md:grid-cols-2 max-w-4xl mx-auto items-stretch">
+        <div className={`mt-14 grid gap-6 ${showHike ? "md:grid-cols-2" : ""} max-w-4xl mx-auto items-stretch`}>
           <article className="animate-in-view relative rounded-2xl p-10 border border-primary popular-glow bg-card shadow-xl text-center">
             <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold px-4 py-1 rounded-full">
               {t("tariffs.badge")}
             </span>
             <div className="mt-4">
-              <span className="text-6xl font-extrabold text-foreground">1990</span>
+              <span className="text-6xl font-extrabold text-foreground">{price}</span>
               <span className="text-muted-foreground ml-1 text-lg">{t("tariffs.price")}</span>
             </div>
             <p className="mt-2 text-sm text-muted-foreground">{t("tariffs.currencies")}</p>
@@ -46,15 +58,17 @@ const TariffsSection = () => {
             </a>
           </article>
 
-          <aside className="animate-in-view rounded-2xl p-8 border-2 border-accent bg-accent/10 shadow-sm flex flex-col justify-center">
-            <h3 className="font-extrabold text-xl md:text-2xl text-foreground">
-              {t("pricealert.title")}
-            </h3>
-            <p className="mt-3 text-sm md:text-base text-foreground/80 leading-relaxed">
-              {t("pricealert.desc")}
-            </p>
-            <PriceHikeTimer />
-          </aside>
+          {showHike && (
+            <aside className="animate-in-view rounded-2xl p-8 border-2 border-accent bg-accent/10 shadow-sm flex flex-col justify-center">
+              <h3 className="font-extrabold text-xl md:text-2xl text-foreground">
+                {t("pricealert.title")}
+              </h3>
+              <p className="mt-3 text-sm md:text-base text-foreground/80 leading-relaxed">
+                {t("pricealert.desc")}
+              </p>
+              <PriceHikeTimer />
+            </aside>
+          )}
         </div>
       </div>
     </section>

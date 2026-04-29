@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
-
-// Цена повышается 1 мая 00:00 по МСК (UTC+3)
-const TARGET_TS = Date.UTC(2026, 4, 1, 0, 0, 0) - 3 * 60 * 60 * 1000;
+import { PRICE_HIKE_TS, isBeforeHike } from "@/lib/pricing";
 
 const PriceHikeTimer = () => {
   const { lang } = useLanguage();
@@ -13,7 +11,10 @@ const PriceHikeTimer = () => {
     return () => clearInterval(id);
   }, []);
 
-  const diff = Math.max(0, TARGET_TS - now);
+  // После дедлайна таймер полностью исчезает.
+  if (!isBeforeHike(now)) return null;
+
+  const diff = Math.max(0, PRICE_HIKE_TS - now);
   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
   const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
   const minutes = Math.floor((diff / (1000 * 60)) % 60);
