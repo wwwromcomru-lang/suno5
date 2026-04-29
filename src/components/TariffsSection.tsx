@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import PriceHikeTimer from "@/components/PriceHikeTimer";
-import { getCurrentPrice, isBeforeHike } from "@/lib/pricing";
+import AnimatedPrice from "@/components/AnimatedPrice";
+import { isBeforeHike } from "@/lib/pricing";
 
 const LAVA_LINK = "https://app.lava.top/posts/a683bc4b-d25b-4ec6-a14a-ab80c5a4ffb9";
 
