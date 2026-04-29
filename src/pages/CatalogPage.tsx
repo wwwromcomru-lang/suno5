@@ -1,9 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import PriceHikeTimer from "@/components/PriceHikeTimer";
 import { booksData } from "@/data/books";
+import { isBeforeHike } from "@/lib/pricing";
 
 const books = booksData;
 
