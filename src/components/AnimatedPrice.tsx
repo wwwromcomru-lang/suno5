@@ -5,12 +5,15 @@ import { getCurrentPrice, isBeforeHike, OLD_PRICE, NEW_PRICE } from "@/lib/prici
 /**
  * Плавная смена цены 1990 → 2990 ровно в момент дедлайна.
  * Без перезагрузки: тикер раз в секунду + кросс-фейд + «вспышка» при смене.
+ * Доступность: aria-live на актуальной цене, видимый focus-ring и
+ * программный перевод фокуса на блок цены в момент смены.
  */
 const AnimatedPrice = () => {
   const { t, lang } = useLanguage();
   const [now, setNow] = useState(() => Date.now());
   const [flash, setFlash] = useState(false);
   const prevPriceRef = useRef(getCurrentPrice());
+  const priceBlockRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const id = setInterval(() => setNow(Date.now()), 1000);
@@ -20,11 +23,14 @@ const AnimatedPrice = () => {
   const price = getCurrentPrice(now);
   const before = isBeforeHike(now);
 
-  // Триггерим вспышку в момент перехода старой цены к новой.
+  // Триггерим вспышку и переводим фокус в момент перехода старой цены к новой.
   useEffect(() => {
     if (prevPriceRef.current !== price) {
       prevPriceRef.current = price;
       setFlash(true);
+      // Переводим фокус на блок цены — клавиатурные пользователи сразу увидят обновление.
+      // Не скроллим, чтобы не перебивать текущую позицию пользователя.
+      priceBlockRef.current?.focus({ preventScroll: true });
       const id = setTimeout(() => setFlash(false), 1400);
       return () => clearTimeout(id);
     }
@@ -38,9 +44,20 @@ const AnimatedPrice = () => {
       ? "Новая цена с 1 мая 2026"
       : "New price from May 1, 2026";
 
+  const a11yLabel =
+    lang === "ru"
+      ? `Текущая цена подписки: ${price} рублей в месяц`
+      : `Current subscription price: ${price} rubles per month`;
+
   return (
     <>
-      <div className="mt-4 relative inline-flex items-baseline justify-center">
+      <div
+        ref={priceBlockRef}
+        tabIndex={-1}
+        role="group"
+        aria-label={a11yLabel}
+        className="mt-4 relative inline-flex items-baseline justify-center rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background px-2 -mx-2"
+      >
         {/* Кросс-фейд между значениями цены */}
         <span className="relative inline-block min-w-[6ch] text-center">
           <span
