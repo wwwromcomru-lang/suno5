@@ -7,6 +7,10 @@ import { tariffsAnchor } from "@/lib/pricing";
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const { t, prefix } = useLanguage();
+  const location = useLocation();
+  const homePath = prefix === "" ? "/" : prefix;
+  const isHome = location.pathname === homePath || location.pathname === prefix + "/";
+  const tariffsHref = tariffsAnchor(prefix, isHome);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
