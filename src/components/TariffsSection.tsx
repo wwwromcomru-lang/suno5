@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import PriceHikeTimer from "@/components/PriceHikeTimer";
 import AnimatedPrice from "@/components/AnimatedPrice";
@@ -9,6 +9,7 @@ const LAVA_LINK = "https://app.lava.top/posts/a683bc4b-d25b-4ec6-a14a-ab80c5a4ff
 const TariffsSection = () => {
   const { t } = useLanguage();
   const [now, setNow] = useState(() => Date.now());
+  const ctaRef = useRef<HTMLAnchorElement | null>(null);
 
   useEffect(() => {
     // Тикаем раз в минуту — для авто-переключения цены ровно в дедлайн.
@@ -17,6 +18,11 @@ const TariffsSection = () => {
   }, []);
 
   const showHike = isBeforeHike(now);
+
+  // После смены цены возвращаем фокус в основную CTA без прыжка страницы.
+  const handlePriceChange = useCallback(() => {
+    ctaRef.current?.focus({ preventScroll: true });
+  }, []);
 
   const features = [
     t("tariffs.f1"), t("tariffs.f2"), t("tariffs.f3"),
@@ -37,7 +43,7 @@ const TariffsSection = () => {
             <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold px-4 py-1 rounded-full">
               {t("tariffs.badge")}
             </span>
-            <AnimatedPrice />
+            <AnimatedPrice onPriceChange={handlePriceChange} />
             <ul className="mt-8 space-y-3 text-left inline-block">
               {features.map((f, j) => (
                 <li key={j} className="flex items-center gap-2 text-sm text-foreground">
@@ -46,10 +52,11 @@ const TariffsSection = () => {
               ))}
             </ul>
             <a
+              ref={ctaRef}
               href={LAVA_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 block text-center py-3.5 rounded-xl font-bold transition-opacity hover:opacity-90 bg-accent text-accent-foreground">
+              className="mt-8 block text-center py-3.5 rounded-xl font-bold transition-opacity hover:opacity-90 bg-accent text-accent-foreground outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background">
               {t("tariffs.cta")}
             </a>
           </article>

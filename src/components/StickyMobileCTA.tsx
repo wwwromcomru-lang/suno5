@@ -28,7 +28,7 @@ const StickyMobileCTA = () => {
       <a
         href={href}
         aria-label={t("nav.subscribe")}
-        className="block w-full text-center bg-accent text-accent-foreground py-4 rounded-2xl font-extrabold shadow-2xl hover:opacity-90 transition-opacity"
+        className="block w-full text-center bg-accent text-accent-foreground py-4 rounded-2xl font-extrabold shadow-2xl hover:opacity-90 transition-opacity outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
       >
         {t("nav.subscribe")} →
       </a>
