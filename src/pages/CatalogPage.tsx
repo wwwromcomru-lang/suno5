@@ -52,15 +52,17 @@ const CatalogPage = () => {
             {t("catalog.subtitle")}
           </p>
 
-          <div className="mt-10 mx-auto max-w-3xl rounded-2xl border-2 border-accent bg-accent/10 p-5 sm:p-6 shadow-sm">
-            <h2 className="font-extrabold text-lg sm:text-xl text-foreground">
-              {t("pricealert.title")}
-            </h2>
-            <p className="mt-2 text-sm sm:text-base text-foreground/80 leading-relaxed">
-              {t("pricealert.desc")}
-            </p>
-            <PriceHikeTimer />
-          </div>
+          {showHike && (
+            <div className="mt-10 mx-auto max-w-3xl rounded-2xl border-2 border-accent bg-accent/10 p-5 sm:p-6 shadow-sm">
+              <h2 className="font-extrabold text-lg sm:text-xl text-foreground">
+                {t("pricealert.title")}
+              </h2>
+              <p className="mt-2 text-sm sm:text-base text-foreground/80 leading-relaxed">
+                {t("pricealert.desc")}
+              </p>
+              <PriceHikeTimer />
+            </div>
+          )}
 
           <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {books.map((book) =>
