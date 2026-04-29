@@ -10,12 +10,20 @@ const books = booksData;
 
 const CatalogPage = () => {
   const { t, prefix, lang } = useLanguage();
+  const [now, setNow] = useState(() => Date.now());
+
+  useEffect(() => {
+    const id = setInterval(() => setNow(Date.now()), 60_000);
+    return () => clearInterval(id);
+  }, []);
 
   useEffect(() => {
     document.title = t("catalog.meta.title");
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", t("catalog.meta.desc"));
   }, [t]);
+
+  const showHike = isBeforeHike(now);
 
   return (
     <div className="min-h-screen bg-background">
