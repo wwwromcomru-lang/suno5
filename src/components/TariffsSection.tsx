@@ -16,7 +16,6 @@ const TariffsSection = () => {
     return () => clearInterval(id);
   }, []);
 
-  const price = getCurrentPrice(now);
   const showHike = isBeforeHike(now);
 
   const features = [
