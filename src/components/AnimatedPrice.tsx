@@ -8,7 +8,12 @@ import { getCurrentPrice, isBeforeHike, OLD_PRICE, NEW_PRICE } from "@/lib/prici
  * Доступность: aria-live на актуальной цене, видимый focus-ring и
  * программный перевод фокуса на блок цены в момент смены.
  */
-const AnimatedPrice = () => {
+type Props = {
+  /** Колбэк при смене цены — родитель сам решает, куда вернуть фокус. */
+  onPriceChange?: (newPrice: number) => void;
+};
+
+const AnimatedPrice = ({ onPriceChange }: Props) => {
   const { t, lang } = useLanguage();
   const [now, setNow] = useState(() => Date.now());
   const [flash, setFlash] = useState(false);
@@ -23,18 +28,16 @@ const AnimatedPrice = () => {
   const price = getCurrentPrice(now);
   const before = isBeforeHike(now);
 
-  // Триггерим вспышку и переводим фокус в момент перехода старой цены к новой.
+  // Триггерим вспышку и оповещаем родителя о смене цены.
   useEffect(() => {
     if (prevPriceRef.current !== price) {
       prevPriceRef.current = price;
       setFlash(true);
-      // Переводим фокус на блок цены — клавиатурные пользователи сразу увидят обновление.
-      // Не скроллим, чтобы не перебивать текущую позицию пользователя.
-      priceBlockRef.current?.focus({ preventScroll: true });
+      onPriceChange?.(price);
       const id = setTimeout(() => setFlash(false), 1400);
       return () => clearTimeout(id);
     }
-  }, [price]);
+  }, [price, onPriceChange]);
 
   const note = before
     ? lang === "ru"
