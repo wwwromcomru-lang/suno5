@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { useLocation } from "react-router-dom";
 import { tariffsAnchor } from "@/lib/pricing";
+import { markLastCta } from "@/lib/lastCta";
 
 const StickyMobileCTA = () => {
   const { t, prefix } = useLanguage();
