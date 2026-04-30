@@ -37,14 +37,22 @@ const Header = () => {
         </a>
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-muted-foreground" aria-label="Основная навигация">
           <a href="#books" className="hover:text-foreground transition-colors">{t("nav.books")}</a>
-          <a href={tariffsHref} className="hover:text-foreground transition-colors">{t("nav.tariffs")}</a>
+          <a
+            ref={navTariffsRef}
+            href={tariffsHref}
+            onFocus={trackNavTariffs}
+            onClick={trackNavTariffs}
+            className="hover:text-foreground transition-colors outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded">{t("nav.tariffs")}</a>
           <a href="#reviews" className="hover:text-foreground transition-colors">{t("nav.reviews")}</a>
         </nav>
         <div className="flex items-center gap-3">
           <LanguageSwitcher />
           <a
+            ref={ctaRef}
             href={tariffsHref}
-            className="bg-accent text-accent-foreground px-5 py-2.5 rounded-lg font-bold text-sm hover:opacity-90 transition-opacity">
+            onFocus={trackCta}
+            onClick={trackCta}
+            className="bg-accent text-accent-foreground px-5 py-2.5 rounded-lg font-bold text-sm hover:opacity-90 transition-opacity outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background">
             {t("nav.subscribe")}
           </a>
         </div>
