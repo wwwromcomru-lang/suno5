@@ -1,8 +1,8 @@
-import { Mail, Globe, Youtube, CreditCard, MessageCircle } from "lucide-react";
+import { Mail, Globe, Youtube, CreditCard, MessageCircle, type LucideIcon } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 type Contact = {
-  icon: React.ComponentType<{ className?: string; "aria-hidden"?: boolean }>;
+  icon: LucideIcon;
   label: string;
   items: { text: string; href: string }[];
 };
