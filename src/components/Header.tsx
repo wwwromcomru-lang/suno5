@@ -12,6 +12,11 @@ const Header = () => {
   const homePath = prefix === "" ? "/" : prefix;
   const isHome = location.pathname === homePath || location.pathname === prefix + "/";
   const tariffsHref = tariffsAnchor(prefix, isHome);
+  const navTariffsRef = useRef<HTMLAnchorElement | null>(null);
+  const ctaRef = useRef<HTMLAnchorElement | null>(null);
+
+  const trackNavTariffs = () => markLastCta(navTariffsRef.current, "header");
+  const trackCta = () => markLastCta(ctaRef.current, "header");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
