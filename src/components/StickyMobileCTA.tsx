@@ -8,6 +8,8 @@ const StickyMobileCTA = () => {
   const { t, prefix } = useLanguage();
   const location = useLocation();
   const [visible, setVisible] = useState(false);
+  const ref = useRef<HTMLAnchorElement | null>(null);
+  const track = () => markLastCta(ref.current, "sticky");
 
   useEffect(() => {
     const onScroll = () => setVisible(window.scrollY > 200);
