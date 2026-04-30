@@ -3,6 +3,7 @@ import { useLanguage } from "@/i18n/LanguageContext";
 import PriceHikeTimer from "@/components/PriceHikeTimer";
 import AnimatedPrice from "@/components/AnimatedPrice";
 import { isBeforeHike } from "@/lib/pricing";
+import { getLastCta, markLastCta } from "@/lib/lastCta";
 
 const LAVA_LINK = "https://app.lava.top/posts/a683bc4b-d25b-4ec6-a14a-ab80c5a4ffb9";
 
@@ -19,10 +20,15 @@ const TariffsSection = () => {
 
   const showHike = isBeforeHike(now);
 
-  // После смены цены возвращаем фокус в основную CTA без прыжка страницы.
+  // После смены цены возвращаем фокус в ту CTA, с которой пользователь
+  // взаимодействовал последней (Header desktop, Sticky mobile или эта же кнопка).
+  // Если ничего не зарегистрировано — фолбэк на основную CTA в тарифах.
   const handlePriceChange = useCallback(() => {
-    ctaRef.current?.focus({ preventScroll: true });
+    const target = getLastCta() ?? ctaRef.current;
+    target?.focus({ preventScroll: true });
   }, []);
+
+  const trackTariffsCta = () => markLastCta(ctaRef.current, "tariffs");
 
   const features = [
     t("tariffs.f1"), t("tariffs.f2"), t("tariffs.f3"),
@@ -56,6 +62,8 @@ const TariffsSection = () => {
               href={LAVA_LINK}
               target="_blank"
               rel="noopener noreferrer"
+              onFocus={trackTariffsCta}
+              onClick={trackTariffsCta}
               className="mt-8 block text-center py-3.5 rounded-xl font-bold transition-opacity hover:opacity-90 bg-accent text-accent-foreground outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background">
               {t("tariffs.cta")}
             </a>

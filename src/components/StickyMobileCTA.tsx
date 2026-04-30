@@ -1,12 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { useLocation } from "react-router-dom";
 import { tariffsAnchor } from "@/lib/pricing";
+import { markLastCta } from "@/lib/lastCta";
 
 const StickyMobileCTA = () => {
   const { t, prefix } = useLanguage();
   const location = useLocation();
   const [visible, setVisible] = useState(false);
+  const ref = useRef<HTMLAnchorElement | null>(null);
+  const track = () => markLastCta(ref.current, "sticky");
 
   useEffect(() => {
     const onScroll = () => setVisible(window.scrollY > 200);
@@ -26,7 +29,10 @@ const StickyMobileCTA = () => {
       }`}
     >
       <a
+        ref={ref}
         href={href}
+        onFocus={track}
+        onClick={track}
         aria-label={t("nav.subscribe")}
         className="block w-full text-center bg-accent text-accent-foreground py-4 rounded-2xl font-extrabold shadow-2xl hover:opacity-90 transition-opacity outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
       >
