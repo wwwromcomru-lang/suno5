@@ -62,6 +62,8 @@ const TariffsSection = () => {
               href={LAVA_LINK}
               target="_blank"
               rel="noopener noreferrer"
+              onFocus={trackTariffsCta}
+              onClick={trackTariffsCta}
               className="mt-8 block text-center py-3.5 rounded-xl font-bold transition-opacity hover:opacity-90 bg-accent text-accent-foreground outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background">
               {t("tariffs.cta")}
             </a>
