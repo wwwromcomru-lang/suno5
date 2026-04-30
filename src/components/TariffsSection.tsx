@@ -20,10 +20,15 @@ const TariffsSection = () => {
 
   const showHike = isBeforeHike(now);
 
-  // После смены цены возвращаем фокус в основную CTA без прыжка страницы.
+  // После смены цены возвращаем фокус в ту CTA, с которой пользователь
+  // взаимодействовал последней (Header desktop, Sticky mobile или эта же кнопка).
+  // Если ничего не зарегистрировано — фолбэк на основную CTA в тарифах.
   const handlePriceChange = useCallback(() => {
-    ctaRef.current?.focus({ preventScroll: true });
+    const target = getLastCta() ?? ctaRef.current;
+    target?.focus({ preventScroll: true });
   }, []);
+
+  const trackTariffsCta = () => markLastCta(ctaRef.current, "tariffs");
 
   const features = [
     t("tariffs.f1"), t("tariffs.f2"), t("tariffs.f3"),
