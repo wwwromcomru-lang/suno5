@@ -123,10 +123,10 @@ export const translations = {
     ru: "Военные марши, кинематографичный оркестр и лирические баллады для парадов, хроники и семейных историй.",
     en: "Military marches, cinematic orchestra and lyrical ballads for parades, chronicles and family stories.",
   },
-  "pricealert.title": { ru: "⚡ Цена вырастет в мае", en: "⚡ Price increases in May" },
+  "pricealert.title": { ru: "⚡ Цена вырастет в мае — будет 3990 ₽", en: "⚡ Price increases in May — will be 3990 ₽" },
   "pricealert.desc": {
-    ru: "Библиотека растёт — растёт и её ценность. В мае цена подписки будет повышена. Кто оформит подписку сейчас по старой цене — будет продлевать доступ к каталогу по этой же старой цене. После повышения новые подписчики платят уже новую цену.",
-    en: "The library is growing — and so is its value. In May the subscription price will increase. Subscribe now at the old price and you keep renewing at the same old price. After the increase, new subscribers pay the new price.",
+    ru: "Библиотека растёт — растёт и её ценность. В мае цена подписки будет повышена до 3990 ₽. Кто оформит подписку сейчас по старой цене — будет продлевать доступ к каталогу по этой же старой цене. После повышения новые подписчики платят уже новую цену.",
+    en: "The library is growing — and so is its value. In May the subscription price will increase to 3990 ₽. Subscribe now at the old price and you keep renewing at the same old price. After the increase, new subscribers pay the new price.",
   },
 
   // Tariffs
