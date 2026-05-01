@@ -41,11 +41,11 @@ const AnimatedPrice = ({ onPriceChange }: Props) => {
 
   const note = before
     ? lang === "ru"
-      ? "Цена действует до 1 мая 2026"
-      : "Price valid until May 1, 2026"
+      ? "Цена действует до 1 июня 2026"
+      : "Price valid until June 1, 2026"
     : lang === "ru"
-      ? "Новая цена с 1 мая 2026"
-      : "New price from May 1, 2026";
+      ? "Новая цена с 1 июня 2026"
+      : "New price from June 1, 2026";
 
   const a11yLabel =
     lang === "ru"
