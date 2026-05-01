@@ -3,7 +3,7 @@
 
 export const PRICE_HIKE_TS = Date.UTC(2026, 5, 1, 0, 0, 0) - 3 * 60 * 60 * 1000;
 export const OLD_PRICE = 1990;
-export const NEW_PRICE = 3990;
+export const NEW_PRICE = 2990;
 
 export const isBeforeHike = (now: number = Date.now()) => now < PRICE_HIKE_TS;
 
