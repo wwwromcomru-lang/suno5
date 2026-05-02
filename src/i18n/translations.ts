@@ -283,6 +283,77 @@ export const translations = {
   "support.cta": { ru: "Поддержка в Telegram", en: "Telegram Support" },
   "support.open": { ru: "Открыть чат", en: "Open chat" },
   "support.prefill": { ru: "Здравствуйте! У меня вопрос: ", en: "Hello! I have a question: " },
+
+  // Comparison
+  "compare.title": { ru: "С библиотекой vs без", en: "With library vs without" },
+  "compare.subtitle": {
+    ru: "Что меняется, когда у вас под рукой 5000+ готовых промптов",
+    en: "What changes when you have 5000+ ready prompts at your fingertips",
+  },
+  "compare.col.criterion": { ru: "Критерий", en: "Criterion" },
+  "compare.col.without": { ru: "Без библиотеки", en: "Without library" },
+  "compare.col.with": { ru: "С Suno5.ru", en: "With Suno5.ru" },
+  "compare.r1": { ru: "Время на создание трека", en: "Time per track" },
+  "compare.r1.without": { ru: "30–90 минут проб и ошибок", en: "30–90 min trial & error" },
+  "compare.r1.with": { ru: "1 минута: копируй и вставляй", en: "1 minute: copy & paste" },
+  "compare.r2": { ru: "Качество звучания", en: "Sound quality" },
+  "compare.r2.without": { ru: "Случайное, часто посредственное", en: "Random, often mediocre" },
+  "compare.r2.with": { ru: "Профессиональное, протестировано", en: "Pro-grade, tested" },
+  "compare.r3": { ru: "Жанровое разнообразие", en: "Genre variety" },
+  "compare.r3.without": { ru: "3–5 знакомых жанров", en: "3–5 familiar genres" },
+  "compare.r3.with": { ru: "100+ жанров и гибридов", en: "100+ genres & hybrids" },
+  "compare.r4": { ru: "Стили артистов", en: "Artist styles" },
+  "compare.r4.without": { ru: "Сложно повторить, нужны знания", en: "Hard to replicate" },
+  "compare.r4.with": { ru: "Готовые формулы Drake, Weeknd, Басты", en: "Ready formulas: Drake, Weeknd, etc." },
+  "compare.r5": { ru: "Обновления", en: "Updates" },
+  "compare.r5.without": { ru: "Сами ищете в чатах и YouTube", en: "Hunt YouTube & chats yourself" },
+  "compare.r5.with": { ru: "+500 свежих промптов каждый месяц", en: "+500 fresh prompts every month" },
+  "compare.r6": { ru: "Стоимость экспериментов", en: "Cost of experiments" },
+  "compare.r6.without": { ru: "Сотни кредитов Suno впустую", en: "Hundreds of Suno credits wasted" },
+  "compare.r6.with": { ru: "Минимум кредитов — максимум хитов", en: "Minimum credits — maximum hits" },
+  "compare.footer": {
+    ru: "Подписка окупается с первого же удачного трека.",
+    en: "Pays for itself with the first hit you make.",
+  },
+
+  // Listened on
+  "listened.kicker": { ru: "Нас слушают на", en: "We're heard on" },
+  "listened.title": { ru: "прослушиваний треков по нашим промптам", en: "plays of tracks made with our prompts" },
+  "listened.subtitle": {
+    ru: "Подписчики выпускают музыку на всех крупных стриминговых платформах",
+    en: "Subscribers release music on all major streaming platforms",
+  },
+
+  // Track examples
+  "tracks.title": { ru: "Примеры треков", en: "Track examples" },
+  "tracks.subtitle": {
+    ru: "Послушайте, что получается из промптов библиотеки. Скопируйте промпт и сделайте свой вариант в Suno.",
+    en: "Listen to what comes out of the library prompts. Copy a prompt and make your own version in Suno.",
+  },
+  "tracks.copy": { ru: "Скопировать промпт", en: "Copy prompt" },
+  "tracks.copied": { ru: "Скопировано!", en: "Copied!" },
+  "tracks.cta": { ru: "Открыть Suno и создать свой трек", en: "Open Suno and create your own" },
+
+  "tracks.t1.title": { ru: "Night Drift", en: "Night Drift" },
+  "tracks.t1.genre": { ru: "Phonk / Drift", en: "Phonk / Drift" },
+  "tracks.t1.prompt": {
+    ru: "dark phonk, 808 cowbell, hard-hitting bass, neon Tokyo at 3am, drift atmosphere, 140 bpm, distorted vocals, memphis vibe",
+    en: "dark phonk, 808 cowbell, hard-hitting bass, neon Tokyo at 3am, drift atmosphere, 140 bpm, distorted vocals, memphis vibe",
+  },
+
+  "tracks.t2.title": { ru: "Last Stand", en: "Last Stand" },
+  "tracks.t2.genre": { ru: "Cinematic / Trailer", en: "Cinematic / Trailer" },
+  "tracks.t2.prompt": {
+    ru: "epic cinematic trailer, taiko drums, soaring strings, brass swells, hero theme, 90 bpm, hans zimmer style, emotional climax",
+    en: "epic cinematic trailer, taiko drums, soaring strings, brass swells, hero theme, 90 bpm, hans zimmer style, emotional climax",
+  },
+
+  "tracks.t3.title": { ru: "Neon Highway", en: "Neon Highway" },
+  "tracks.t3.genre": { ru: "Synthwave / Retro", en: "Synthwave / Retro" },
+  "tracks.t3.prompt": {
+    ru: "80s synthwave, analog synths, gated reverb drums, saxophone solo, miami sunset, 110 bpm, retrowave, the weeknd inspired",
+    en: "80s synthwave, analog synths, gated reverb drums, saxophone solo, miami sunset, 110 bpm, retrowave, the weeknd inspired",
+  },
 } as const;
 
 export type TranslationKey = keyof typeof translations;
