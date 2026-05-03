@@ -8,6 +8,8 @@ import { LanguageProvider } from "@/i18n/LanguageContext";
 import Index from "./pages/Index.tsx";
 import CatalogPage from "./pages/CatalogPage.tsx";
 import BookPage from "./pages/BookPage.tsx";
+import BlogIndex from "./pages/BlogIndex.tsx";
+import BlogPost from "./pages/BlogPost.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import StickyMobileCTA from "./components/StickyMobileCTA";
 
@@ -44,6 +46,8 @@ const AppRoutes = () => (
       <Route path="/" element={<Index />} />
       <Route path="/catalog" element={<CatalogPage />} />
       <Route path="/book/:slug" element={<BookPage />} />
+      <Route path="/blog" element={<BlogIndex />} />
+      <Route path="/blog/:slug" element={<BlogPost />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </LanguageProvider>
