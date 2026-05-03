@@ -3,12 +3,14 @@ import { useLanguage } from "@/i18n/LanguageContext";
 
 // Pseudo-random but deterministic-ish counter — grows slowly day by day
 const computeListeners = (): number => {
-  const base = 184_273;
-  const startDate = new Date("2025-01-01").getTime();
-  const days = Math.floor((Date.now() - startDate) / (1000 * 60 * 60 * 24));
-  // ~370 listeners/day on average, with daily jitter
-  const jitter = Math.floor(Math.sin(days * 1.7) * 80 + Math.cos(days * 0.9) * 40);
-  return base + days * 370 + jitter;
+  const base = 3_000_000;
+  const startDate = new Date("2026-05-03").getTime();
+  const ms = Math.max(0, Date.now() - startDate);
+  const days = Math.floor(ms / (1000 * 60 * 60 * 24));
+  const minutes = Math.floor(ms / (1000 * 60));
+  // ~1200 listeners/day on average, with jitter, plus minute-level growth
+  const jitter = Math.floor(Math.sin(days * 1.7) * 120 + Math.cos(days * 0.9) * 60);
+  return base + 24_346 + days * 1200 + Math.floor(minutes * 0.8) + jitter;
 };
 
 const platforms = [
