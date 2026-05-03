@@ -2,14 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://suno5.ru/</loc>
-    <lastmod>2026-03-12</lastmod>
+    <lastmod>2026-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://suno5.ru/catalog</loc>
-    <lastmod>2026-03-12</lastmod>
+    <lastmod>2026-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://suno5.ru/blog</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url><loc>https://suno5.ru/blog/kak-napisat-promt-dlya-suno</loc><lastmod>2026-04-10</lastmod><priority>0.7</priority></url>
+  <url><loc>https://suno5.ru/blog/10-zhanrov-za-5-minut</loc><lastmod>2026-04-12</lastmod><priority>0.7</priority></url>
+  <url><loc>https://suno5.ru/blog/vokal-v-suno-kak-upravlyat</loc><lastmod>2026-04-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://suno5.ru/blog/suno-vs-udio-sravnenie</loc><lastmod>2026-04-16</lastmod><priority>0.7</priority></url>
+  <url><loc>https://suno5.ru/blog/kak-zarabotat-na-suno</loc><lastmod>2026-04-18</lastmod><priority>0.7</priority></url>
+  <url><loc>https://suno5.ru/blog/struktura-pesni-v-suno</loc><lastmod>2026-04-20</lastmod><priority>0.7</priority></url>
+  <url><loc>https://suno5.ru/blog/phonk-promty-podborka</loc><lastmod>2026-04-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://suno5.ru/blog/suno-dlya-reklamy-i-yutuba</loc><lastmod>2026-04-24</lastmod><priority>0.7</priority></url>
+  <url><loc>https://suno5.ru/blog/lyrics-dlya-suno-kak-pisat</loc><lastmod>2026-04-26</lastmod><priority>0.7</priority></url>
+  <url><loc>https://suno5.ru/blog/oshibki-novichkov-v-suno</loc><lastmod>2026-04-28</lastmod><priority>0.7</priority></url>
 </urlset>

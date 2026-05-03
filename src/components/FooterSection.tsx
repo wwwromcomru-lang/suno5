@@ -10,6 +10,9 @@ const FooterSection = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-background/70">© 2026 <a href="https://mastersuno.ru" target="_blank" rel="noopener noreferrer" className="hover:text-background/90 transition-colors">MASTERSUNO.RU</a> — {t("footer.rights")}</p>
           <nav className="flex gap-6 text-sm" aria-label="Legal">
+            <a href="/blog" className="text-background/70 hover:text-background/90 transition-colors">
+              Блог
+            </a>
             <a href="#" className="text-background/70 hover:text-background/90 transition-colors">
               {t("footer.privacy")}
             </a>
